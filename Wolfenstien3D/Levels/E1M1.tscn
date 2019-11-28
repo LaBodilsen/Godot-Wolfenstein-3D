@@ -1,0 +1,566 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://Assets/Scripts/Level_Init.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Prefabs/Ground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Prefabs/Wallslib.meshlib" type="MeshLibrary" id=3]
+[ext_resource path="res://Assets/Prefabs/StaticObjects.meshlib" type="MeshLibrary" id=4]
+[ext_resource path="res://Assets/Prefabs/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Prefabs/Door.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Prefabs/ElevatorRoom.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Prefabs/ElevatorDoor.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Prefabs/Collectables/Food.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Prefabs/Collectables/AmoPackOnGround.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Prefabs/Collectables/DogFoodBowl.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Prefabs/Collectables/HealthPack.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Prefabs/Collectables/MachineGun.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Assets/Prefabs/Collectables/GoldChalice.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Assets/Prefabs/Collectables/GoldCross.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Prefabs/Collectables/GoldChest.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/Prefabs/Collectables/ExtraLife.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets/Prefabs/MoveableWoodWall.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Assets/Prefabs/MoveableStoneWall.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Assets/Endlevelpicture.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Prefabs/Guard.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Assets/Music/GETTHEM.ogg" type="AudioStream" id=22]
+
+[sub_resource type="Animation" id=1]
+resource_name = "ExtraLifeItemCollected"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 0, 0.12549 ), Color( 0.0352941, 1, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "HealthItemCollected"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 0, 0.12549 ), Color( 0.0352941, 1, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "PlayerHitByEnemy"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 0.12549 ), Color( 0.0352941, 1, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "TreasureItemCollected"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 0, 0.12549 ), Color( 0.0352941, 1, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 0, 0.12549 ), Color( 0.0352941, 1, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="BitmapFont" id=7]
+height = 16.0
+
+[node name="E1M1" type="Spatial"]
+script = ExtResource( 1 )
+sfx_amo_pickup = "res://Assets/Sounds/Amo Pickup.ogg"
+sfx_weapon3_Pickup = "res://Assets/Sounds/MachineGunPickup.wav"
+sfx_weapon4_Pickup = "res://Assets/Sounds/ChainGunPickup.ogg"
+sfx_treasure_pickup1 = "res://Assets/Sounds/Treasure Pickup.ogg"
+sfx_treasure_pickup2 = "res://Assets/Sounds/GoldCrossPickup.wav"
+sfx_treasure_pickup3 = "res://Assets/Sounds/GoldChestPickup.wav"
+sfx_treasure_pickup4 = "res://Assets/Sounds/Treasure Pickup.ogg"
+sfx_health_pickup1 = "res://Assets/Sounds/HealthPackPickup.wav"
+sfx_health_pickup2 = "res://Assets/Sounds/FoodPlatePickup.wav"
+sfx_extralife_pickup = "res://Assets/Sounds/ExtraLifePickup.ogg"
+
+[node name="CollectorFlash" type="CanvasLayer" parent="."]
+editor/display_folded = true
+
+[node name="ColorRect" type="ColorRect" parent="CollectorFlash"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0352941, 1, 0, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CollectorFlash/ColorRect"]
+anims/ExtraLifeItemCollected = SubResource( 1 )
+anims/HealthItemCollected = SubResource( 2 )
+anims/PlayerHitByEnemy = SubResource( 3 )
+anims/TreasureItemCollected = SubResource( 4 )
+anims/WeaponItemCollected = SubResource( 5 )
+
+[node name="Ground" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.1, 0 )
+
+[node name="WallsGridMap" type="GridMap" parent="."]
+mesh_library = ExtResource( 3 )
+cell_size = Vector3( 1, 1, 1 )
+data = {
+"cells": PoolIntArray( 0, 0, 655360, 4, 0, 655361, 14, 0, 655360, 17, 0, 655361, 24, 0, 655360, 27, 0, 655360, 65504, 0, 655364, 65508, 0, 1611268101, 65509, 0, 655364, 65510, 0, 537526276, 65511, 0, 655364, 65512, 0, 655364, 65516, 0, 655364, 0, 1, 655361, 4, 1, 655361, 14, 1, 655361, 17, 1, 655360, 65504, 1, 655364, 65508, 1, 655364, 65509, 1, 537526276, 65510, 1, 655364, 65511, 1, 655364, 65512, 1, 655365, 65516, 1, 655365, 0, 2, 655360, 4, 2, 655361, 14, 2, 655360, 17, 2, 655361, 18, 2, 655360, 19, 2, 655360, 20, 2, 655360, 21, 2, 655360, 22, 2, 655360, 23, 2, 537526272, 24, 2, 655360, 25, 2, 655360, 26, 2, 655360, 27, 2, 655360, 28, 2, 655360, 29, 2, 655360, 65504, 2, 655364, 65508, 2, 655364, 65512, 2, 655364, 65516, 2, 655364, 0, 3, 655361, 4, 3, 655360, 14, 3, 655361, 17, 3, 655360, 18, 3, 655360, 19, 3, 655361, 21, 3, 655360, 23, 3, 655361, 25, 3, 655361, 27, 3, 655360, 28, 3, 655361, 29, 3, 537526272, 65504, 3, 655365, 65512, 3, 655366, 65516, 3, 655366, 0, 4, 655361, 4, 4, 537526273, 14, 4, 655360, 18, 4, 537526272, 28, 4, 537526272, 29, 4, 655360, 65504, 4, 537526276, 65508, 4, 655365, 65512, 4, 655365, 65516, 4, 1611268101, 0, 5, 655360, 4, 5, 537526272, 14, 5, 655360, 28, 5, 655362, 29, 5, 655360, 65504, 5, 655365, 65508, 5, 655364, 65509, 5, 655364, 65510, 5, 655365, 65511, 5, 655364, 65512, 5, 655364, 65516, 5, 655365, 0, 6, 655361, 4, 6, 655361, 14, 6, 655361, 18, 6, 655360, 28, 6, 655360, 29, 6, 655360, 65504, 6, 655365, 65508, 6, 655365, 65509, 6, 655364, 65510, 6, 655365, 65511, 6, 655364, 65512, 6, 537526277, 65516, 6, 1611268100, 65517, 6, 655365, 65518, 6, 1611268100, 65519, 6, 655365, 65520, 6, 655365, 65521, 6, 655366, 65522, 6, 655364, 65523, 6, 655365, 65524, 6, 655364, 65525, 6, 655367, 65526, 6, 655365, 65527, 6, 655364, 65528, 6, 655364, 0, 7, 655360, 4, 7, 655361, 14, 7, 655360, 15, 7, 1, 16, 7, 655360, 17, 7, 655360, 18, 7, 655360, 19, 7, 655361, 21, 7, 655360, 23, 7, 655360, 25, 7, 655360, 27, 7, 655360, 28, 7, 655361, 29, 7, 655360, 65504, 7, 655364, 65521, 7, 655365, 65528, 7, 655366, 0, 8, 655361, 4, 8, 655360, 14, 8, 655360, 15, 8, 655360, 16, 8, 1611268096, 17, 8, 655360, 18, 8, 655360, 19, 8, 655360, 20, 8, 655360, 21, 8, 655360, 22, 8, 655360, 23, 8, 655360, 24, 8, 655360, 25, 8, 655360, 26, 8, 655360, 27, 8, 537526272, 28, 8, 655360, 29, 8, 655360, 65504, 8, 655365, 0, 9, 655361, 4, 9, 655361, 65504, 9, 655365, 65521, 9, 655364, 65528, 9, 537526278, 0, 10, 655360, 4, 10, 537526272, 65504, 10, 537526276, 65505, 10, 655365, 65506, 10, 655365, 65507, 10, 655364, 65508, 10, 1611268101, 65509, 10, 655365, 65510, 10, 655364, 65511, 10, 655365, 65512, 10, 655365, 65513, 10, 655364, 65514, 10, 655368, 65515, 10, 655364, 65516, 10, 655364, 65517, 10, 655364, 65518, 10, 655365, 65519, 10, 655364, 65520, 10, 655364, 65521, 10, 655364, 65523, 10, 537526277, 65524, 10, 655364, 65525, 10, 655367, 65526, 10, 655364, 65527, 10, 655365, 65528, 10, 655364, 0, 11, 655360, 1, 11, 655360, 3, 11, 655360, 4, 11, 655360, 5, 11, 655360, 6, 11, 655360, 7, 11, 655360, 8, 11, 655361, 9, 11, 655360, 65515, 11, 655366, 65518, 11, 655364, 65524, 11, 655364, 65531, 11, 655360, 65532, 11, 655360, 65533, 11, 655361, 65534, 11, 655360, 65535, 11, 655361, 0, 12, 655360, 4, 12, 655360, 9, 12, 655361, 65518, 12, 655364, 65521, 12, 655364, 65523, 12, 655364, 65531, 12, 655361, 9, 13, 655361, 65515, 13, 655366, 65521, 13, 655364, 65522, 13, 655364, 65531, 13, 655360, 0, 14, 655360, 4, 14, 655360, 9, 14, 655361, 65516, 14, 655364, 65518, 14, 655364, 65519, 14, 655364, 65520, 14, 655364, 65521, 14, 655364, 65531, 14, 655360, 0, 15, 655361, 4, 15, 655361, 9, 15, 655361, 65516, 15, 655364, 65519, 15, 655364, 65531, 15, 655361, 0, 16, 655361, 4, 16, 655360, 5, 16, 655360, 6, 16, 655360, 7, 16, 655360, 8, 16, 655360, 9, 16, 655360, 65516, 16, 655364, 65519, 16, 655364, 65531, 16, 655360, 65532, 16, 655360, 65533, 16, 1, 65534, 16, 655360, 65535, 16, 655360, 0, 17, 655360, 4, 17, 537526272, 9, 17, 655360, 65516, 17, 655364, 65517, 17, 655364, 65518, 17, 655364, 65519, 17, 655364, 65531, 17, 655360, 9, 18, 655361, 65531, 18, 655361, 0, 19, 655360, 4, 19, 655360, 9, 19, 655360, 65531, 19, 655360, 0, 20, 655361, 4, 20, 655361, 5, 20, 655360, 6, 20, 655360, 7, 20, 655361, 8, 20, 655360, 9, 20, 655360, 65531, 20, 655360, 65532, 20, 655361, 65533, 20, 655361, 65534, 20, 655360, 65535, 20, 655360, 9, 21, 537526272, 65531, 21, 655360, 9, 22, 655360, 65531, 22, 655361, 9, 23, 655360, 65531, 23, 655360, 0, 24, 655360, 1, 24, 655361, 2, 24, 655363, 3, 24, 655360, 4, 24, 537526273, 5, 24, 655362, 6, 24, 655361, 7, 24, 655360, 8, 24, 655362, 9, 24, 655360, 65531, 24, 537526272, 65532, 24, 655362, 65533, 24, 655361, 65534, 24, 537526272, 65535, 24, 655362, 0, 65504, 655369, 1, 65504, 655369, 2, 65504, 655369, 3, 65504, 655369, 4, 65504, 655369, 5, 65504, 655370, 6, 65504, 537526281, 7, 65504, 655369, 8, 65504, 655369, 65532, 65504, 655369, 65533, 65504, 655369, 65534, 65504, 655369, 65535, 65504, 655370, 8, 65505, 655369, 65509, 65505, 655364, 65510, 65505, 655364, 65511, 65505, 655364, 65512, 65505, 655364, 65513, 65505, 655364, 65514, 65505, 655364, 65532, 65505, 655369, 8, 65506, 537526282, 9, 65506, 655369, 10, 65506, 655369, 11, 65506, 655369, 12, 65506, 655369, 65509, 65506, 655364, 65514, 65506, 655364, 65521, 65506, 655364, 65522, 65506, 655364, 65523, 65506, 655365, 65524, 65506, 655365, 65525, 65506, 655364, 65526, 65506, 537526277, 65527, 65506, 655365, 65528, 65506, 655366, 65529, 65506, 655364, 65530, 65506, 655365, 65531, 65506, 655364, 65532, 65506, 537526282, 8, 65507, 537526281, 12, 65507, 655369, 65509, 65507, 655364, 65514, 65507, 655364, 65521, 65507, 5, 65532, 65507, 655369, 12, 65508, 655370, 65509, 65508, 655364, 65515, 65508, 655364, 65521, 65508, 655364, 8, 65509, 655369, 12, 65509, 655369, 65509, 65509, 655364, 65515, 65509, 655364, 65521, 65509, 537526277, 65532, 65509, 537526281, 8, 65510, 655371, 9, 65510, 655369, 10, 65510, 655369, 11, 65510, 655369, 12, 65510, 655369, 65509, 65510, 655364, 65510, 65510, 655365, 65511, 65510, 655367, 65512, 65510, 537526276, 65513, 65510, 655365, 65515, 65510, 655365, 65516, 65510, 655364, 65517, 65510, 655367, 65518, 65510, 655364, 65519, 65510, 655364, 65521, 65510, 655364, 65525, 65510, 655364, 65526, 65510, 655364, 65527, 65510, 655364, 65528, 65510, 655366, 65529, 65510, 4, 65530, 65510, 655364, 65531, 65510, 5, 65532, 65510, 655371, 8, 65511, 655369, 65509, 65511, 655365, 65519, 65511, 655365, 65521, 65511, 655364, 65525, 65511, 537526276, 65532, 65511, 655369, 0, 65512, 655369, 1, 65512, 655369, 3, 65512, 655369, 4, 65512, 655369, 5, 65512, 655370, 6, 65512, 655369, 7, 65512, 655369, 8, 65512, 655369, 65509, 65512, 655366, 65519, 65512, 537526278, 65520, 65512, 655364, 65521, 65512, 655365, 65525, 65512, 655364, 65526, 65512, 655365, 65527, 65512, 655364, 65533, 65512, 537526281, 65534, 65512, 655369, 65535, 65512, 655370, 0, 65513, 655369, 4, 65513, 655369, 65509, 65513, 655365, 65519, 65513, 655365, 65527, 65513, 655364, 0, 65514, 655369, 4, 65514, 655369, 65509, 65514, 655364, 65527, 65514, 537526276, 0, 65515, 655371, 4, 65515, 537526283, 65509, 65515, 655364, 65519, 65515, 537526276, 65527, 65515, 655364, 0, 65516, 655369, 4, 65516, 655369, 65504, 65516, 655364, 65505, 65516, 655365, 65506, 65516, 655364, 65507, 65516, 655365, 65508, 65516, 537526276, 65509, 65516, 655366, 65519, 65516, 655366, 65520, 65516, 655364, 65521, 65516, 655365, 65522, 65516, 655364, 65523, 65516, 655367, 65524, 65516, 655364, 65525, 65516, 655365, 65526, 65516, 655364, 65527, 65516, 655364, 0, 65517, 655369, 4, 65517, 655369, 65504, 65517, 655365, 65508, 65517, 537526276, 65509, 65517, 655364, 65519, 65517, 655364, 0, 65518, 655369, 4, 65518, 655369, 5, 65518, 655369, 6, 65518, 655369, 65504, 65518, 655364, 65508, 65518, 655365, 65509, 65518, 655364, 65510, 65518, 655365, 65511, 65518, 655367, 65512, 65518, 655364, 65513, 65518, 655364, 65515, 65518, 655364, 65516, 65518, 655364, 65517, 65518, 655367, 65518, 65518, 655365, 65531, 65518, 655369, 65532, 65518, 655369, 65533, 65518, 655369, 65534, 65518, 655369, 65535, 65518, 537526281, 6, 65519, 655369, 65504, 65519, 537526276, 65508, 65519, 655364, 65512, 65519, 655364, 65516, 65519, 655365, 65531, 65519, -1609957367, 0, 65520, 537526281, 4, 65520, 655369, 5, 65520, 537526281, 6, 65520, 655369, 65504, 65520, 655364, 65505, 65520, 655364, 65507, 65520, 655364, 65508, 65520, 655364, 65512, 65520, 655366, 65516, 65520, 537526278, 65531, 65520, 655369, 65534, 65520, 655369, 65535, 65520, 655369, 0, 65521, 655369, 4, 65521, 655369, 65504, 65521, 655364, 65508, 65521, 655364, 65509, 65521, 655364, 65510, 65521, 655365, 65511, 65521, 655364, 65512, 65521, 655364, 65516, 65521, 537526276, 65531, 65521, 655369, 65534, 65521, 655369, 65535, 65521, 537526281, 0, 65522, 655369, 4, 65522, 655369, 65504, 65522, 655364, 65508, 65522, 655365, 65512, 65522, 655364, 65516, 65522, 655365, 65531, 65522, 655369, 65534, 65522, 655369, 65535, 65522, 655369, 0, 65523, 655370, 4, 65523, 655370, 65504, 65523, 655364, 65512, 65523, 655366, 65516, 65523, 655366, 65531, 65523, 655369, 65532, 65523, 655369, 65533, 65523, 655369, 65534, 65523, 655369, 65535, 65523, 655369, 0, 65524, 1611268105, 4, 65524, 655369, 65504, 65524, 655364, 65508, 65524, 655364, 65512, 65524, 655365, 65516, 65524, 655364, 0, 65525, 655369, 1, 65525, 655370, 3, 65525, 655370, 4, 65525, 1611268105, 21, 65525, 537526272, 22, 65525, 655360, 23, 65525, 655361, 24, 65525, 537526272, 25, 65525, 1611268096, 26, 65525, 655360, 27, 65525, 655361, 28, 65525, 655361, 29, 65525, 655361, 30, 65525, 655360, 65504, 65525, 655365, 65508, 65525, 655364, 65509, 65525, 655365, 65510, 65525, 655364, 65511, 65525, 655365, 65512, 65525, 655364, 65513, 65525, 655364, 65515, 65525, 1611268100, 65516, 65525, 655364, 65517, 65525, 655365, 65518, 65525, 655364, 65519, 65525, 537526276, 5, 65526, 655364, 6, 65526, 655366, 7, 65526, 655364, 8, 65526, 655365, 9, 65526, 655364, 10, 65526, 655364, 11, 65526, 1, 21, 65526, 655360, 30, 65526, 655360, 65504, 65526, 655366, 65508, 65526, 655366, 65509, 65526, 655365, 65519, 65526, 655364, 65530, 65526, 537526277, 65531, 65526, 655364, 65532, 65526, 655365, 65533, 65526, 655364, 65534, 65526, 655366, 65535, 65526, 655365, 10, 65527, 655365, 11, 65527, 536870913, 21, 65527, 537526272, 30, 65527, 655361, 65504, 65527, 655365, 65508, 65527, 537526276, 65509, 65527, 537526277, 65519, 65527, 655366, 65530, 65527, 655364, 10, 65528, 655367, 11, 65528, 655361, 12, 65528, 655360, 13, 65528, 655360, 14, 65528, 655360, 15, 65528, 537526273, 16, 65528, 655360, 17, 65528, 655360, 18, 65528, 655360, 19, 65528, 655361, 20, 65528, 655361, 21, 65528, 655360, 30, 65528, 655360, 65504, 65528, 655364, 65508, 65528, 655364, 65509, 65528, 655364, 65519, 65528, 655364, 65530, 65528, 655367, 11, 65529, 655361, 21, 65529, 655360, 30, 65529, 537526273, 65504, 65529, 655364, 65509, 65529, 655364, 65519, 65529, 655365, 65530, 65529, 537526276, 30, 65530, 537526274, 65504, 65530, 655364, 65519, 65530, 655366, 65530, 65530, 655365, 11, 65531, 655360, 21, 65531, 537526273, 30, 65531, 655361, 65504, 65531, 655364, 65509, 65531, 655364, 65519, 65531, 655364, 65530, 65531, 655365, 10, 65532, 655367, 11, 65532, 655360, 12, 65532, 655360, 13, 65532, 655360, 18, 65532, 537526273, 19, 65532, 655361, 20, 65532, 655360, 21, 65532, 655360, 30, 65532, 655360, 65504, 65532, -1609957372, 65508, 65532, 655364, 65509, 65532, 655364, 65519, 65532, 655365, 65530, 65532, 655367, 10, 65533, 655365, 11, 65533, 1, 12, 65533, 1, 13, 65533, 655360, 14, 65533, 537526272, 17, 65533, 655360, 21, 65533, 655361, 30, 65533, 655361, 65504, 65533, 655364, 65508, 65533, 655364, 65509, 65533, 537526276, 65519, 65533, 655366, 65530, 65533, 655365, 5, 65534, 655364, 6, 65534, 655365, 7, 65534, 655368, 8, 65534, 655364, 9, 65534, 655365, 14, 65534, 655361, 17, 65534, 655361, 21, 65534, 655360, 30, 65534, 655360, 65504, 65534, 655365, 65508, 65534, 655364, 65509, 65534, 655364, 65519, 65534, 655364, 65530, 65534, 655364, 65531, 65534, 655364, 65532, 65534, 537526280, 65533, 65534, 537526276, 65534, 65534, 655365, 65535, 65534, 655364, 0, 65535, 655360, 1, 65535, 537526272, 3, 65535, 655360, 4, 65535, 655360, 5, 65535, 655364, 14, 65535, 537526273, 17, 65535, 655360, 21, 65535, 1611268097, 22, 65535, 655361, 23, 65535, 655360, 25, 65535, 655361, 26, 65535, 655360, 28, 65535, 655361, 29, 65535, 655360, 30, 65535, 537526272, 65504, 65535, 655368, 65508, 65535, 655368, 65509, 65535, 655364, 65510, 65535, 655365, 65511, 65535, 655364, 65512, 65535, 655364, 65513, 65535, 655365, 65515, 65535, 537526276, 65516, 65535, 655364, 65517, 65535, 655365, 65518, 65535, 655365, 65519, 65535, 655364, 65535, 65535, 655364 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="StaticObjectsGridMap" type="GridMap" parent="."]
+mesh_library = ExtResource( 4 )
+cell_size = Vector3( 1, 1, 1 )
+data = {
+"cells": PoolIntArray( 2, 1, 12, 65511, 2, 0, 65510, 3, 12, 65514, 3, 12, 2, 5, 12, 65506, 5, 12, 27, 6, 13, 65510, 8, 12, 65518, 8, 12, 2, 9, 12, 65532, 12, 24, 2, 13, 12, 6, 13, 22, 2, 18, 12, 8, 18, 24, 2, 22, 12, 6, 22, 12, 65534, 22, 12, 7, 65505, 33, 65533, 65505, 33, 2, 65506, 536870940, 5, 65506, 28, 65535, 65506, 28, 2, 65508, 536870924, 65523, 65508, 12, 65528, 65508, 12, 65513, 65511, 3, 65515, 65511, 3, 65511, 65512, 15, 65517, 65512, 536870927, 65510, 65514, 14, 65513, 65514, 28, 65514, 65514, 41, 65523, 65514, 536870924, 2, 65515, 12, 65511, 65516, 15, 65517, 65516, 15, 65506, 65518, 12, 2, 65519, 536870924, 5, 65519, 19, 65514, 65520, 12, 65506, 65522, 12, 2, 65523, 12, 65510, 65523, 12, 65514, 65523, 12, 0, 65526, 536870932, 4, 65526, 33, 26, 65526, 34, 27, 65526, 1, 28, 65526, 1, 29, 65526, 1, 65506, 65526, 12, 9, 65527, 20, 29, 65527, 536870913, 65511, 65527, 20, 65517, 65527, 20, 65531, 65527, 20, 65512, 65528, 536870924, 65516, 65528, 12, 2, 65530, 11, 7, 65530, 11, 65533, 65530, 11, 24, 65532, 29, 27, 65532, 29, 65512, 65532, 12, 65516, 65532, 536870924, 9, 65533, 20, 65511, 65533, 20, 65517, 65533, 536870932, 65531, 65533, 20, 24, 65535, 36, 27, 65535, 35, 65506, 65535, 12 )
+}
+__meta__ = {
+"_editor_clip_": 0
+}
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0, 0, 0 )
+light_energy = 0.5
+
+[node name="DirectionalLight2" type="DirectionalLight" parent="."]
+light_energy = 0.5
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -2.5065, 0.5, 18.5 )
+
+[node name="Doors" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Door1" parent="Doors" instance=ExtResource( 6 )]
+editor/display_folded = true
+transform = Transform( -4.36677e-008, 0, -1, 0, 1, 0, 0.999, 0, -4.37114e-008, 0.5, 0.5, 18.5 )
+
+[node name="Door2" parent="Doors" instance=ExtResource( 6 )]
+editor/display_folded = true
+transform = Transform( -4.36677e-008, 0, -1, 0, 1, 0, 0.999, 0, -4.37114e-008, 4.5, 0.5, 18.5 )
+
+[node name="Door3" parent="Doors" instance=ExtResource( 6 )]
+transform = Transform( -4.36677e-008, 0, -1, 0, 1, 0, 0.999, 0, -4.37114e-008, 4.5, 0.5, 13.5 )
+
+[node name="Door4" parent="Doors" instance=ExtResource( 6 )]
+transform = Transform( -4.36677e-008, 0, -1, 0, 1, 0, 0.999, 0, -4.37114e-008, 0.5, 0.5, 13.5 )
+
+[node name="Door5" parent="Doors" instance=ExtResource( 6 )]
+transform = Transform( 0.999, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, 11.5 )
+
+[node name="Door6" parent="Doors" instance=ExtResource( 6 )]
+transform = Transform( 0.999, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, -0.5 )
+
+[node name="Door7" parent="Doors" instance=ExtResource( 6 )]
+transform = Transform( -4.36677e-008, 0, -1, 0, 1, 0, 0.999, 0, -4.37114e-008, 21.5, 0.5, -5.5 )
+
+[node name="Door8" parent="Doors" instance=ExtResource( 6 )]
+transform = Transform( -4.36677e-008, 0, -1, 0, 1, 0, 0.999, 0, -4.37114e-008, 18.5, 0.5, 5.5 )
+
+[node name="Door9" parent="Doors" instance=ExtResource( 6 )]
+transform = Transform( 0.999, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, -23.5 )
+
+[node name="Door19" parent="Doors" instance=ExtResource( 6 )]
+transform = Transform( 0.999, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, -10.5 )
+
+[node name="Door20" parent="Doors" instance=ExtResource( 6 )]
+transform = Transform( 6.70552e-008, 0, -1, 0, 1, 0, 0.999, 0, 6.70552e-008, 11.5, 0.5, -5.5 )
+
+[node name="Door10" parent="Doors" instance=ExtResource( 6 )]
+transform = Transform( -1.49012e-008, 0, -1, 0, 1, 0, 0.999, 0, -1.49012e-008, 8.5, 0.5, -27.5 )
+
+[node name="Door11" parent="Doors" instance=ExtResource( 6 )]
+transform = Transform( -1.49012e-008, 0, -1, 0, 1, 0, 0.999, 0, -1.49012e-008, -3.5, 0.5, -27.5 )
+
+[node name="Door12" parent="Doors" instance=ExtResource( 6 )]
+transform = Transform( -1.49012e-008, 0, -1, 0, 1, 0, 0.999, 0, -1.49012e-008, -16.5, 0.5, -21.5 )
+
+[node name="Door13" parent="Doors" instance=ExtResource( 6 )]
+transform = Transform( 0.999, 0, 2.88102e-008, 0, 1, 0, -2.87665e-008, 0, 1, -21.5, 0.5, -17.5 )
+
+[node name="Door14" parent="Doors" instance=ExtResource( 6 )]
+transform = Transform( 0.999, 0, 2.88102e-008, 0, 1, 0, -2.87665e-008, 0, 1, -21.5, 0.5, -10.5 )
+
+[node name="Door15" parent="Doors" instance=ExtResource( 6 )]
+transform = Transform( 0.999, 0, 2.88102e-008, 0, 1, 0, -2.87665e-008, 0, 1, -21.5, 0.5, -0.5 )
+
+[node name="Door16" parent="Doors" instance=ExtResource( 6 )]
+transform = Transform( 0, 0, -1, 0, 1, 0, 0.999, 0, 7.45058e-009, -26.5, 0.5, -5.5 )
+
+[node name="Door17" parent="Doors" instance=ExtResource( 6 )]
+transform = Transform( 0.999, 0, 5.1162e-008, 0, 1, 0, -4.36677e-008, 0, 1, -29.5, 0.5, -15.5 )
+
+[node name="Door18" parent="Doors" instance=ExtResource( 6 )]
+transform = Transform( 1.74671e-007, 0, -1, 0, 1, 0, 0.999, 0, 1.82296e-007, -14.5, 0.5, 8.5 )
+
+[node name="Elevators" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="ElevatorRoom" parent="Elevators" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.5, 8.5 )
+
+[node name="ElevatorRoom2" parent="Elevators" instance=ExtResource( 7 )]
+transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, -21.5, 0.5, 12.5 )
+
+[node name="ElevatorDoor" parent="Elevators" instance=ExtResource( 8 )]
+transform = Transform( -4.36677e-008, 0, -1, 0, 1, 0, 0.999, 0, -4.37114e-008, -7.5, 0.5, 8.5 )
+
+[node name="ElevatorDoor2" parent="Elevators" instance=ExtResource( 8 )]
+transform = Transform( -4.36677e-008, 0, 1, 0, 1, 0, -0.999, 0, -4.37114e-008, -20.5, 0.5, 12.5 )
+
+[node name="EndLevelFader" type="CanvasLayer" parent="."]
+editor/display_folded = true
+
+[node name="EndLevelFadeTimer" type="Timer" parent="EndLevelFader"]
+wait_time = 2.0
+
+[node name="ColorRect" type="ColorRect" parent="EndLevelFader"]
+editor/display_folded = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EndLevelFader/ColorRect"]
+anims/EndLevelFade = SubResource( 6 )
+
+[node name="Collectables" type="Node" parent="."]
+
+[node name="ChickenMealOnGround" parent="Collectables" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.5, 12.5 )
+
+[node name="ChickenMealOnGround2" parent="Collectables" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.5, 18.5 )
+
+[node name="ChickenMealOnGround3" parent="Collectables" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, 23.5 )
+
+[node name="ChickenMealOnGround4" parent="Collectables" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5, 0.5, -3.5 )
+
+[node name="ChickenMealOnGround6" parent="Collectables" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 0.5, -1.5 )
+
+[node name="ChickenMealOnGround5" parent="Collectables" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0.5, -9.5 )
+
+[node name="AmoPackOnGround" parent="Collectables" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0.5, 22.5 )
+
+[node name="FoodBowlOnGround" parent="Collectables" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5, 0.5, 3.5 )
+
+[node name="AmoPackOnGround2" parent="Collectables" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.5, -15.5 )
+
+[node name="AmoPackOnGround3" parent="Collectables" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.5, -14.5 )
+
+[node name="HealthPackOnGround" parent="Collectables" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.5, -14.5 )
+
+[node name="HealthPackOnGround2" parent="Collectables" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.5, -13.5 )
+
+[node name="MachinePistolOnGround" parent="Collectables" instance=ExtResource( 13 )]
+editor/display_folded = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.5, -13.5 )
+
+[node name="GoldCupOnGround" parent="Collectables" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0.5, -26.5 )
+
+[node name="GoldCupOnGround2" parent="Collectables" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0.5, -26.5 )
+
+[node name="GoldCupOnGround3" parent="Collectables" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0.5, -26.5 )
+
+[node name="GoldCupOnGround4" parent="Collectables" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0.5, -28.5 )
+
+[node name="GoldCupOnGround5" parent="Collectables" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5, 0.5, -24.5 )
+
+[node name="GoldCupOnGround6" parent="Collectables" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5, 0.5, -24.5 )
+
+[node name="GoldCupOnGround7" parent="Collectables" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 0.5, -11.5 )
+
+[node name="CrucifixOnGround" parent="Collectables" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0.5, -28.5 )
+
+[node name="CrucifixOnGround2" parent="Collectables" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0.5, -28.5 )
+
+[node name="CrucifixOnGround3" parent="Collectables" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0.5, -27.5 )
+
+[node name="CrucifixOnGround4" parent="Collectables" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5, 0.5, -23.5 )
+
+[node name="CrucifixOnGround5" parent="Collectables" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 0.5, -24.5 )
+
+[node name="CrucifixOnGround6" parent="Collectables" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5, 0.5, -29.5 )
+
+[node name="CrucifixOnGround7" parent="Collectables" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.5, 0.5, -29.5 )
+
+[node name="CrucifixOnGround8" parent="Collectables" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.5, 0.5, -28.5 )
+
+[node name="GoldTreasureOnGround" parent="Collectables" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.5, 0.5, -27.5 )
+
+[node name="GoldTreasureOnGround2" parent="Collectables" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5, 0.5, -27.5 )
+
+[node name="GoldTreasureOnGround3" parent="Collectables" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5, 0.5, -26.5 )
+
+[node name="GoldTreasureOnGround4" parent="Collectables" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5, 0.5, -28.5 )
+
+[node name="GoldTreasureOnGround5" parent="Collectables" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 0.5, -18.5 )
+
+[node name="GoldTreasureOnGround6" parent="Collectables" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5, 0.5, -18.5 )
+
+[node name="GoldTreasureOnGround7" parent="Collectables" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5, 0.5, -19.5 )
+
+[node name="AmoPackOnGround4" parent="Collectables" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5, 0.5, -26.5 )
+
+[node name="AmoPackOnGround5" parent="Collectables" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5, 0.5, -27.5 )
+
+[node name="AmoPackOnGround6" parent="Collectables" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5, 0.5, -28.5 )
+
+[node name="AmoPackOnGround7" parent="Collectables" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5, 0.5, -29.5 )
+
+[node name="AmoPackOnGround8" parent="Collectables" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 0.5, -29.5 )
+
+[node name="AmoPackOnGround9" parent="Collectables" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 0.5, -28.5 )
+
+[node name="AmoPackOnGround10" parent="Collectables" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 0.5, -27.5 )
+
+[node name="AmoPackOnGround11" parent="Collectables" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 0.5, -26.5 )
+
+[node name="HealthPackOnGround3" parent="Collectables" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5, 0.5, -18.5 )
+
+[node name="ChickenMealOnGround7" parent="Collectables" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 0.5, -13.5 )
+
+[node name="ChickenMealOnGround8" parent="Collectables" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.5, 0.5, 4.5 )
+
+[node name="ExtraLife" parent="Collectables" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, 0.5, 16.5 )
+
+[node name="HealthPackOnGround4" parent="Collectables" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0.5, 11.5 )
+
+[node name="Secrets" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Wall White Eagle Wood" parent="Secrets" instance=ExtResource( 18 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, -16.5 )
+move_direction = Vector3( -0.4, 0, 0 )
+
+[node name="Wall Stone Grey 1" parent="Secrets" instance=ExtResource( 19 )]
+editor/display_folded = true
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -21.5, 0.5, -25.5 )
+move_direction = Vector3( 0, 0, -0.4 )
+
+[node name="Wall Stone Grey 2" parent="Secrets" instance=ExtResource( 19 )]
+editor/display_folded = true
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -13.5, 0.5, 10.5 )
+move_direction = Vector3( 0, 0, 0.4 )
+
+[node name="Wall Stone Grey 3" parent="Secrets" instance=ExtResource( 19 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5, 0.5, 11.5 )
+move_direction = Vector3( -0.4, 0, 0 )
+
+[node name="Wall Stone Grey 4" parent="Secrets" instance=ExtResource( 19 )]
+editor/display_folded = true
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -18.5, 0.5, 14.5 )
+move_direction = Vector3( 0, 0, 0.4 )
+
+[node name="EndLevelStats" type="CanvasLayer" parent="."]
+editor/display_folded = true
+
+[node name="ColorRect" type="ColorRect" parent="EndLevelStats"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0.254902, 0.254902, 1 )
+
+[node name="Label" type="Label" parent="EndLevelStats/ColorRect"]
+margin_left = 142.0
+margin_top = 95.0
+margin_right = 182.0
+margin_bottom = 130.0
+custom_fonts/font = SubResource( 7 )
+text = "HEJ
+"
+
+[node name="TextureRect" type="TextureRect" parent="EndLevelStats/ColorRect"]
+margin_left = 41.0
+margin_top = 35.0
+margin_right = 206.0
+margin_bottom = 212.0
+size_flags_stretch_ratio = 38.49
+texture = ExtResource( 20 )
+expand = true
+stretch_mode = 5
+
+[node name="Enemys" type="Node" parent="."]
+
+[node name="Guard" parent="Enemys" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.5, -6.5 )
+rotation_frame_add = 7
+sfx_death_sound = "res://Assets/Sounds/Guard Death.ogg"
+
+[node name="Guard6" parent="Enemys" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, -16.5 )
+rotation_frame_add = 6
+sfx_death_sound = "res://Assets/Sounds/Guard Death3.ogg"
+
+[node name="Guard7" parent="Enemys" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, -28 )
+rotation_frame_add = 7
+sfx_death_sound = "res://Assets/Sounds/Guard Death.ogg"
+
+[node name="Guard9" parent="Enemys" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0.5, -23.5 )
+rotation_frame_add = 4
+sfx_death_sound = "res://Assets/Sounds/Guard Death3.ogg"
+
+[node name="Guard11" parent="Enemys" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5, 0.5, -21.5 )
+rotation_frame_add = 6
+sfx_death_sound = "res://Assets/Sounds/Guard Death3.ogg"
+
+[node name="Guard12" parent="Enemys" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5, 0.5, -20.5 )
+rotation_frame_add = 6
+sfx_death_sound = "res://Assets/Sounds/Guard Death3.ogg"
+
+[node name="Guard13" parent="Enemys" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5, 0.5, -1.5 )
+rotation_frame_add = 4
+sfx_death_sound = "res://Assets/Sounds/Guard Death3.ogg"
+
+[node name="Guard16" parent="Enemys" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.5, 9 )
+sfx_death_sound = "res://Assets/Sounds/Guard Death3.ogg"
+
+[node name="Guard17" parent="Enemys" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0.5, 8.5 )
+sfx_death_sound = "res://Assets/Sounds/Guard Death3.ogg"
+
+[node name="Guard14" parent="Enemys" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0.5, -1.5 )
+rotation_frame_add = 4
+sfx_death_sound = "res://Assets/Sounds/Guard Death3.ogg"
+
+[node name="Guard15" parent="Enemys" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5, 0.5, -9.5 )
+rotation_frame_add = 8
+sfx_death_sound = "res://Assets/Sounds/Guard Death3.ogg"
+
+[node name="Guard10" parent="Enemys" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.5, -21.5 )
+sfx_death_sound = "res://Assets/Sounds/Guard Death.ogg"
+
+[node name="Guard8" parent="Enemys" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, -27.5 )
+
+[node name="Guard2" parent="Enemys" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, -22 )
+rotation_frame_add = 1
+sfx_death_sound = "res://Assets/Sounds/Guard Death3.ogg"
+
+[node name="Guard3" parent="Enemys" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0.5, -7.5 )
+rotation_frame_add = 1
+
+[node name="Guard4" parent="Enemys" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0.5, 6 )
+rotation_frame_add = 4
+sfx_death_sound = "res://Assets/Sounds/Guard Death.ogg"
+
+[node name="Guard5" parent="Enemys" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, 22 )
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 22 )
+
+[node name="Sound FX Player" type="AudioStreamPlayer" parent="."]
+[connection signal="timeout" from="EndLevelFader/EndLevelFadeTimer" to="." method="_on_EndLevelFadeTimer_timeout"]
