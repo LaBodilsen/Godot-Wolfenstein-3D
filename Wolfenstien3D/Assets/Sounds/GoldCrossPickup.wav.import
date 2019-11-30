@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GoldCrossPickup.wav-ef7b56b0bb1795405a221771b1fc6561.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/GoldCrossPickup.wav"
+dest_files=[ "res://.import/GoldCrossPickup.wav-ef7b56b0bb1795405a221771b1fc6561.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/MachineGun.wav-18ef496c63d645ecf5c35d34dd03a2d9.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/MachineGun.wav"
+dest_files=[ "res://.import/MachineGun.wav-18ef496c63d645ecf5c35d34dd03a2d9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

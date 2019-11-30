@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Guard Death.ogg-67eba9c59f879d8fe27ffdeaa6e1767e.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Guard Death.ogg"
+dest_files=[ "res://.import/Guard Death.ogg-67eba9c59f879d8fe27ffdeaa6e1767e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

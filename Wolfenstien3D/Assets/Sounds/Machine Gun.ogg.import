@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Machine Gun.ogg-cd0845ef6f46103ae93cd0e4ab2b7e80.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Machine Gun.ogg"
+dest_files=[ "res://.import/Machine Gun.ogg-cd0845ef6f46103ae93cd0e4ab2b7e80.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
