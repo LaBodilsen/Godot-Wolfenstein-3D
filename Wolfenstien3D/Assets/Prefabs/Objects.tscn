@@ -1,0 +1,836 @@
+[gd_scene load_steps=113 format=2]
+
+[ext_resource path="res://Assets/ObjectGfx/BarrelGreen.png" type="Texture" id=1]
+[ext_resource path="res://Assets/ObjectGfx/BarrelWood.png" type="Texture" id=2]
+[ext_resource path="res://Assets/ObjectGfx/BedOnGround.png" type="Texture" id=3]
+[ext_resource path="res://Assets/ObjectGfx/BigPlantOnGround.png" type="Texture" id=4]
+[ext_resource path="res://Assets/ObjectGfx/BloodOnGround.png" type="Texture" id=5]
+[ext_resource path="res://Assets/ObjectGfx/BloodySkeletonOnGround.png" type="Texture" id=6]
+[ext_resource path="res://Assets/ObjectGfx/BonesOnGround1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/ObjectGfx/BonesOnGround2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/ObjectGfx/BonesOnGround3.png" type="Texture" id=9]
+[ext_resource path="res://Assets/ObjectGfx/CeilingCage.png" type="Texture" id=10]
+[ext_resource path="res://Assets/ObjectGfx/CeilingCageSkeletong.png" type="Texture" id=11]
+[ext_resource path="res://Assets/ObjectGfx/CeilingLampGold.png" type="Texture" id=12]
+[ext_resource path="res://Assets/ObjectGfx/CeilingLampGreen.png" type="Texture" id=13]
+[ext_resource path="res://Assets/ObjectGfx/EmptyBucketOnGround.png" type="Texture" id=14]
+[ext_resource path="res://Assets/ObjectGfx/FlagPoleOnGround.png" type="Texture" id=15]
+[ext_resource path="res://Assets/ObjectGfx/GreenLampOnGround.png" type="Texture" id=16]
+[ext_resource path="res://Assets/ObjectGfx/GreenPlantRoots.png" type="Texture" id=17]
+[ext_resource path="res://Assets/ObjectGfx/KitchenWares.png" type="Texture" id=18]
+[ext_resource path="res://Assets/ObjectGfx/KitchenWares2.png" type="Texture" id=19]
+[ext_resource path="res://Assets/ObjectGfx/KnightsAmor.png" type="Texture" id=20]
+[ext_resource path="res://Assets/ObjectGfx/PlantInVaseOnGround.png" type="Texture" id=21]
+[ext_resource path="res://Assets/ObjectGfx/SinkOnGround.png" type="Texture" id=22]
+[ext_resource path="res://Assets/ObjectGfx/SkeletonOnGround.png" type="Texture" id=23]
+[ext_resource path="res://Assets/ObjectGfx/SkeletonOnWall.png" type="Texture" id=24]
+[ext_resource path="res://Assets/ObjectGfx/SkullAndBonesOnGround.png" type="Texture" id=25]
+[ext_resource path="res://Assets/ObjectGfx/SpearsOnRack.png" type="Texture" id=26]
+[ext_resource path="res://Assets/ObjectGfx/StonePillar.png" type="Texture" id=27]
+[ext_resource path="res://Assets/ObjectGfx/StoveOnGround.png" type="Texture" id=28]
+[ext_resource path="res://Assets/ObjectGfx/TableAndChairs.png" type="Texture" id=29]
+[ext_resource path="res://Assets/ObjectGfx/TableNoChairs.png" type="Texture" id=30]
+[ext_resource path="res://Assets/ObjectGfx/TextCallApogee.png" type="Texture" id=31]
+[ext_resource path="res://Assets/ObjectGfx/TextDeathCam.png" type="Texture" id=32]
+[ext_resource path="res://Assets/ObjectGfx/TextDemo.png" type="Texture" id=33]
+[ext_resource path="res://Assets/ObjectGfx/VaseOnGround.png" type="Texture" id=34]
+[ext_resource path="res://Assets/ObjectGfx/WaterOnGround.png" type="Texture" id=35]
+[ext_resource path="res://Assets/ObjectGfx/WellEmpty.png" type="Texture" id=36]
+[ext_resource path="res://Assets/ObjectGfx/WellWithWater.png" type="Texture" id=37]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="QuadMesh" id=2]
+material = SubResource( 1 )
+flip_faces = true
+
+[sub_resource type="BoxShape" id=3]
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=5]
+material = SubResource( 4 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=6]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="QuadMesh" id=7]
+material = SubResource( 6 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=8]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="QuadMesh" id=9]
+material = SubResource( 8 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=10]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 5 )
+
+[sub_resource type="QuadMesh" id=11]
+material = SubResource( 10 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=12]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 6 )
+
+[sub_resource type="QuadMesh" id=13]
+material = SubResource( 12 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=14]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 7 )
+
+[sub_resource type="QuadMesh" id=15]
+material = SubResource( 14 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=16]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 8 )
+
+[sub_resource type="QuadMesh" id=17]
+material = SubResource( 16 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=18]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 9 )
+
+[sub_resource type="QuadMesh" id=19]
+material = SubResource( 18 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=20]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 10 )
+
+[sub_resource type="QuadMesh" id=21]
+material = SubResource( 20 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=22]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 11 )
+
+[sub_resource type="QuadMesh" id=23]
+material = SubResource( 22 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=24]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 12 )
+
+[sub_resource type="QuadMesh" id=25]
+material = SubResource( 24 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=26]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 13 )
+
+[sub_resource type="QuadMesh" id=27]
+material = SubResource( 26 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=28]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 14 )
+
+[sub_resource type="QuadMesh" id=29]
+material = SubResource( 28 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=30]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 15 )
+
+[sub_resource type="QuadMesh" id=31]
+material = SubResource( 30 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=32]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 16 )
+
+[sub_resource type="QuadMesh" id=33]
+material = SubResource( 32 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=34]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 17 )
+
+[sub_resource type="QuadMesh" id=35]
+material = SubResource( 34 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=36]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 18 )
+
+[sub_resource type="QuadMesh" id=37]
+material = SubResource( 36 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=38]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 19 )
+
+[sub_resource type="QuadMesh" id=39]
+material = SubResource( 38 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=40]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 20 )
+
+[sub_resource type="QuadMesh" id=41]
+material = SubResource( 40 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=42]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 21 )
+
+[sub_resource type="QuadMesh" id=43]
+material = SubResource( 42 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=44]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 22 )
+
+[sub_resource type="QuadMesh" id=45]
+material = SubResource( 44 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=46]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 23 )
+
+[sub_resource type="QuadMesh" id=47]
+material = SubResource( 46 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=48]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 24 )
+
+[sub_resource type="QuadMesh" id=49]
+material = SubResource( 48 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=50]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 25 )
+
+[sub_resource type="QuadMesh" id=51]
+material = SubResource( 50 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=52]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 26 )
+
+[sub_resource type="QuadMesh" id=53]
+material = SubResource( 52 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=54]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 27 )
+
+[sub_resource type="QuadMesh" id=55]
+material = SubResource( 54 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=56]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 28 )
+
+[sub_resource type="QuadMesh" id=57]
+material = SubResource( 56 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=58]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 29 )
+
+[sub_resource type="QuadMesh" id=59]
+material = SubResource( 58 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=60]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 30 )
+
+[sub_resource type="QuadMesh" id=61]
+material = SubResource( 60 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=62]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 31 )
+
+[sub_resource type="QuadMesh" id=63]
+material = SubResource( 62 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=64]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 32 )
+
+[sub_resource type="QuadMesh" id=65]
+material = SubResource( 64 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=66]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 33 )
+
+[sub_resource type="QuadMesh" id=67]
+material = SubResource( 66 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=68]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 34 )
+
+[sub_resource type="QuadMesh" id=69]
+material = SubResource( 68 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=70]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 35 )
+
+[sub_resource type="QuadMesh" id=71]
+material = SubResource( 70 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=72]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 36 )
+
+[sub_resource type="QuadMesh" id=73]
+material = SubResource( 72 )
+flip_faces = true
+
+[sub_resource type="SpatialMaterial" id=74]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 37 )
+
+[sub_resource type="QuadMesh" id=75]
+material = SubResource( 74 )
+flip_faces = true
+
+[node name="Static Objects" type="Spatial"]
+
+[node name="BarrelGreen" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2 )
+layers = 2
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="BarrelGreen"]
+
+[node name="CollisionShape" type="CollisionShape" parent="BarrelGreen/StaticBody"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="BarrelWood" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3 )
+layers = 2
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="BarrelWood"]
+
+[node name="CollisionShape" type="CollisionShape" parent="BarrelWood/StaticBody"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="BedOnGround" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4 )
+layers = 2
+mesh = SubResource( 7 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="BedOnGround"]
+
+[node name="CollisionShape" type="CollisionShape" parent="BedOnGround/StaticBody"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="BigPlantOnGround" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+layers = 2
+mesh = SubResource( 9 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="BigPlantOnGround"]
+
+[node name="CollisionShape" type="CollisionShape" parent="BigPlantOnGround/StaticBody"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="BloodOnGround" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1 )
+layers = 2
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="BloodySkeletonOnGround" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1 )
+layers = 2
+mesh = SubResource( 13 )
+material/0 = null
+
+[node name="BonesOnGround1" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2 )
+layers = 2
+mesh = SubResource( 15 )
+material/0 = null
+
+[node name="BonesOnGround2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3 )
+layers = 2
+mesh = SubResource( 17 )
+material/0 = null
+
+[node name="BonesOnGround3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4 )
+layers = 2
+mesh = SubResource( 19 )
+material/0 = null
+
+[node name="CeilingCage" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0 )
+mesh = SubResource( 21 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="CeilingCage"]
+
+[node name="CollisionShape" type="CollisionShape" parent="CeilingCage/StaticBody"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="CeilingCageSkeleton" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1 )
+mesh = SubResource( 23 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="CeilingCageSkeleton"]
+
+[node name="CollisionShape" type="CollisionShape" parent="CeilingCageSkeleton/StaticBody"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="CeilingLampGold" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2 )
+layers = 2
+mesh = SubResource( 25 )
+material/0 = null
+
+[node name="CeilingLampGreen" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3 )
+layers = 2
+mesh = SubResource( 27 )
+material/0 = null
+
+[node name="EmptyBucketOnGround" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0 )
+layers = 2
+mesh = SubResource( 29 )
+material/0 = null
+
+[node name="FlagPoleOnGround" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 2 )
+layers = 2
+mesh = SubResource( 31 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="FlagPoleOnGround"]
+
+[node name="CollisionShape" type="CollisionShape" parent="FlagPoleOnGround/StaticBody"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="GreenLampOnGround" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0 )
+layers = 2
+mesh = SubResource( 33 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="GreenLampOnGround"]
+
+[node name="CollisionShape" type="CollisionShape" parent="GreenLampOnGround/StaticBody"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="GreenPlantRoots" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1 )
+layers = 2
+mesh = SubResource( 35 )
+material/0 = null
+
+[node name="KitchenWares" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 3 )
+layers = 2
+mesh = SubResource( 37 )
+material/0 = null
+
+[node name="KitchenWares2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 4 )
+layers = 2
+mesh = SubResource( 39 )
+material/0 = null
+
+[node name="KnightsAmor" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0 )
+mesh = SubResource( 41 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="KnightsAmor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="KnightsAmor/StaticBody"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="PlantInVaseOnGround" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3 )
+layers = 2
+mesh = SubResource( 43 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="PlantInVaseOnGround"]
+
+[node name="CollisionShape" type="CollisionShape" parent="PlantInVaseOnGround/StaticBody"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="SinkOnGround" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 4 )
+layers = 2
+mesh = SubResource( 45 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="SinkOnGround"]
+
+[node name="CollisionShape" type="CollisionShape" parent="SinkOnGround/StaticBody"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="SkeletonOnGround" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0 )
+layers = 2
+mesh = SubResource( 47 )
+material/0 = null
+
+[node name="SkeletonOnWall" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1 )
+layers = 2
+mesh = SubResource( 49 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="SkeletonOnWall"]
+
+[node name="CollisionShape" type="CollisionShape" parent="SkeletonOnWall/StaticBody"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="SkullAndBonesOnGround" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 2 )
+layers = 2
+mesh = SubResource( 51 )
+material/0 = null
+
+[node name="SpearsOnRack" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 3 )
+layers = 2
+mesh = SubResource( 53 )
+material/0 = null
+
+[node name="StonePillar" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 4 )
+mesh = SubResource( 55 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="StonePillar"]
+
+[node name="CollisionShape" type="CollisionShape" parent="StonePillar/StaticBody"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="StoveOnGround" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0 )
+layers = 2
+mesh = SubResource( 57 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="StoveOnGround"]
+
+[node name="CollisionShape" type="CollisionShape" parent="StoveOnGround/StaticBody"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="TableAndChairs" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 1 )
+layers = 2
+mesh = SubResource( 59 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="TableAndChairs"]
+
+[node name="CollisionShape" type="CollisionShape" parent="TableAndChairs/StaticBody"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="TableNoChairs" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 2 )
+layers = 2
+mesh = SubResource( 61 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="TableNoChairs"]
+
+[node name="CollisionShape" type="CollisionShape" parent="TableNoChairs/StaticBody"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="TextCallApogee" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 3 )
+layers = 2
+mesh = SubResource( 63 )
+material/0 = null
+
+[node name="TextDeathCam" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4 )
+layers = 2
+mesh = SubResource( 65 )
+material/0 = null
+
+[node name="TextDemo" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0 )
+layers = 2
+mesh = SubResource( 67 )
+material/0 = null
+
+[node name="VaseOnGround" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 1 )
+layers = 2
+mesh = SubResource( 69 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="VaseOnGround"]
+
+[node name="CollisionShape" type="CollisionShape" parent="VaseOnGround/StaticBody"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="WaterOnGround" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 2 )
+layers = 2
+mesh = SubResource( 71 )
+material/0 = null
+
+[node name="WellEmpty" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 3 )
+layers = 2
+mesh = SubResource( 73 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="WellEmpty"]
+
+[node name="CollisionShape" type="CollisionShape" parent="WellEmpty/StaticBody"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="WellWithWater" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 4 )
+layers = 2
+mesh = SubResource( 75 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="WellWithWater"]
+
+[node name="CollisionShape" type="CollisionShape" parent="WellWithWater/StaticBody"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+shape = SubResource( 3 )

@@ -1,0 +1,116 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Assets/Prefabs/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://Assets/EnemyGfx/Guard.png" type="Texture" id=2]
+[ext_resource path="res://Assets/ObjectGfx/AmoPackOnGround.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Scripts/Collectables.gd" type="Script" id=4]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 0.4
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+flags_unshaded = true
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+
+[sub_resource type="BoxShape" id=3]
+
+[sub_resource type="Animation" id=4]
+resource_name = "Hit"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 47 ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 40, 41, 42, 43, 44 ]
+}
+
+[sub_resource type="SpatialMaterial" id=6]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="QuadMesh" id=7]
+material = SubResource( 6 )
+flip_faces = true
+
+[sub_resource type="BoxShape" id=8]
+
+[node name="Guard" type="StaticBody" groups=[
+"Group",
+"Enemy",
+]]
+script = ExtResource( 1 )
+rotation_frame_add = 2
+sfx_death_sound = "res://Assets/Sounds/Guard Death2.ogg"
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+material_override = SubResource( 2 )
+pixel_size = 0.0156
+double_sided = false
+alpha_cut = 2
+texture = ExtResource( 2 )
+vframes = 7
+hframes = 8
+region_enabled = true
+region_rect = Rect2( 0, 0, 512, 448 )
+
+[node name="Area" type="Area" parent="Sprite3D"]
+editor/display_folded = true
+
+[node name="CollisionShape" type="CollisionShape" parent="Sprite3D/Area"]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D"]
+playback_speed = 0.5
+anims/Hit = SubResource( 4 )
+anims/Killed = SubResource( 5 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="AmoPackOnGround" type="MeshInstance" parent="." groups=[
+"Amopack",
+"Weapons",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0 )
+visible = false
+mesh = SubResource( 7 )
+material/0 = null
+script = ExtResource( 4 )
+
+[node name="Area" type="Area" parent="AmoPackOnGround"]
+
+[node name="CollisionShape" type="CollisionShape" parent="AmoPackOnGround/Area"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+shape = SubResource( 8 )
+[connection signal="animation_finished" from="Sprite3D/AnimationPlayer" to="." method="_on_Play_animation_finished"]

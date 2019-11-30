@@ -1,0 +1,236 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Assets/Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Weapons.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sounds/ChainGunsound.wav" type="AudioStream" id=3]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 1.5
+
+[sub_resource type="Animation" id=2]
+resource_name = "FireChainGun"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 17, 18 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../WeaponSound1:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../../WeaponSound2:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 6, 7, 8, 5 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "FireMachineGun"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 12, 13, 10 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../WeaponSound1:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 4, 1, 0 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "LowerChainGun"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 16, 19, 15 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "LowerMachineGun"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 11, 10 ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 15, 16 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "RiseMachineGun"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 10, 11 ]
+}
+
+[sub_resource type="GDScript" id=10]
+script/source = "extends AudioStreamPlayer
+
+func _ready():
+	pass
+"
+
+[node name="Player" type="KinematicBody"]
+script = ExtResource( 1 )
+mouse_sensitivity = 0.4
+weapon_sound_knife = "res://Assets/Sounds/Gun Fire.ogg"
+weapon_sound_gun = "res://Assets/Sounds/Gun Fire.ogg"
+weapon_sound_machinegun = "res://Assets/Sounds/MachineGun.wav"
+weapon_sound_chaingun = "res://Assets/Sounds/ChainGunsound.wav"
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.25, 0, 0, 0, 0.3, 0, 0, 0, 0.25, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="WeaponRayCast" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, 0, -25 )
+
+[node name="InteractRayCast" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, 0, -1 )
+
+[node name="Camera" type="Camera" parent="."]
+fov = 45.0
+
+[node name="Control" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -400.0
+margin_top = -800.0
+margin_right = 400.0
+
+[node name="Sprite" type="Sprite" parent="Control"]
+scale = Vector2( 12.5, 12.5 )
+texture = ExtResource( 2 )
+centered = false
+vframes = 4
+hframes = 5
+frame = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Sprite"]
+anims/FireChainGun = SubResource( 2 )
+anims/FireGun = SubResource( 3 )
+anims/FireMachineGun = SubResource( 4 )
+anims/Knife_Stab = SubResource( 5 )
+anims/LowerChainGun = SubResource( 6 )
+anims/LowerMachineGun = SubResource( 7 )
+anims/RiseChainGun = SubResource( 8 )
+anims/RiseMachineGun = SubResource( 9 )
+
+[node name="WeaponSound1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -5.832
+script = SubResource( 10 )
+
+[node name="WeaponSound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -5.832
+script = SubResource( 10 )
