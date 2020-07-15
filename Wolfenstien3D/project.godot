@@ -23,6 +23,7 @@ _global_script_class_icons={
 config/name="Wolfenstien3D"
 run/main_scene="res://Main.tscn"
 boot_splash/image="res://Assets/Title Picture.png"
+boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://Assets/Title Picture.png"
 
@@ -33,11 +34,10 @@ Global="*res://Assets/Scripts/Global.gd"
 [display]
 
 window/size/width=1280
-window/size/height=800
+window/size/height=720
+window/size/always_on_top=true
 window/size/test_width=1280
-window/size/test_height=800
-window/stretch/mode="viewport"
-window/stretch/aspect="keep"
+window/size/test_height=720
 
 [global]
 
@@ -48,6 +48,26 @@ auto=false
 ogg_vorbis={
 "loop": false,
 "loop_offset": 0
+}
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 3,
+"compress/normal_map": 0,
+"detect_3d": false,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": true,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
 }
 
 [input]
@@ -98,6 +118,16 @@ Strafe_right={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
  ]
 }
+UP={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":81,"unicode":0,"echo":false,"script":null)
+ ]
+}
+DOWN={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [physics]
 
@@ -106,6 +136,7 @@ Strafe_right={
 [rendering]
 
 quality/driver/driver_name="GLES2"
+quality/intended_usage/framebuffer_allocation.mobile=2
 threads/thread_model=2
 vram_compression/import_etc=true
 vram_compression/import_etc2=false

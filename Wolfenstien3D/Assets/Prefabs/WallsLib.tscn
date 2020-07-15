@@ -1,18 +1,53 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=146 format=2]
 
 [ext_resource path="res://Assets/WallGfx/WallStoneBlue1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/WallGfx/WallStoneBlue2.png" type="Texture" id=2]
 [ext_resource path="res://Assets/WallGfx/WallCellStoneBlue.png" type="Texture" id=3]
 [ext_resource path="res://Assets/WallGfx/WallCellSkeletonStoneBlue.png" type="Texture" id=4]
-[ext_resource path="res://Assets/WallGfx/WallStoneGrey1.png" type="Texture" id=5]
-[ext_resource path="res://Assets/WallGfx/WallStoneGrey2.png" type="Texture" id=6]
-[ext_resource path="res://Assets/WallGfx/WallFlagStoneGrey.png" type="Texture" id=7]
-[ext_resource path="res://Assets/WallGfx/WallGoldenEagleStoneGrey.png" type="Texture" id=8]
-[ext_resource path="res://Assets/WallGfx/WallHitlerStoneGrey.png" type="Texture" id=9]
-[ext_resource path="res://Assets/WallGfx/WallWood.png" type="Texture" id=10]
-[ext_resource path="res://Assets/WallGfx/WallWhiteEagleWood.png" type="Texture" id=11]
-[ext_resource path="res://Assets/WallGfx/WallHitlerWood.png" type="Texture" id=12]
-[ext_resource path="res://Assets/WallGfx/WallElevatorDoor.png" type="Texture" id=13]
+[ext_resource path="res://Assets/WallGfx/BlueBrickWall.png" type="Texture" id=5]
+[ext_resource path="res://Assets/WallGfx/BlueStoneWall-Sign.png" type="Texture" id=6]
+[ext_resource path="res://Assets/WallGfx/BlueWall-Skull.png" type="Texture" id=7]
+[ext_resource path="res://Assets/WallGfx/BlueWall-Swastica.png" type="Texture" id=8]
+[ext_resource path="res://Assets/WallGfx/WallStoneGrey1.png" type="Texture" id=9]
+[ext_resource path="res://Assets/WallGfx/WallStoneGrey2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/WallGfx/WallFlagStoneGrey.png" type="Texture" id=11]
+[ext_resource path="res://Assets/WallGfx/WallGoldenEagleStoneGrey.png" type="Texture" id=12]
+[ext_resource path="res://Assets/WallGfx/WallHitlerStoneGrey.png" type="Texture" id=13]
+[ext_resource path="res://Assets/WallGfx/StoneWall-Mos1.png" type="Texture" id=14]
+[ext_resource path="res://Assets/WallGfx/StoneWall-mos2.png" type="Texture" id=15]
+[ext_resource path="res://Assets/WallGfx/StoneWall-Sign.png" type="Texture" id=16]
+[ext_resource path="res://Assets/WallGfx/StoneWall.png" type="Texture" id=17]
+[ext_resource path="res://Assets/WallGfx/GreyBrickWall-Crack.png" type="Texture" id=18]
+[ext_resource path="res://Assets/WallGfx/GreyBrickWall-Hitler.png" type="Texture" id=19]
+[ext_resource path="res://Assets/WallGfx/GreyBrickWall-went.png" type="Texture" id=20]
+[ext_resource path="res://Assets/WallGfx/GreyBrickWall.png" type="Texture" id=21]
+[ext_resource path="res://Assets/WallGfx/GreyStoneWall-Map.png" type="Texture" id=22]
+[ext_resource path="res://Assets/WallGfx/GreyWall-Mosaic.png" type="Texture" id=23]
+[ext_resource path="res://Assets/WallGfx/WallWood.png" type="Texture" id=24]
+[ext_resource path="res://Assets/WallGfx/WallWhiteEagleWood.png" type="Texture" id=25]
+[ext_resource path="res://Assets/WallGfx/WallHitlerWood.png" type="Texture" id=26]
+[ext_resource path="res://Assets/WallGfx/WoodWall-Cross.png" type="Texture" id=27]
+[ext_resource path="res://Assets/WallGfx/WoodWall.png" type="Texture" id=28]
+[ext_resource path="res://Assets/WallGfx/WallElevatorDoor.png" type="Texture" id=29]
+[ext_resource path="res://Assets/WallGfx/SteelDoor.png" type="Texture" id=30]
+[ext_resource path="res://Assets/WallGfx/SteelDoor3.png" type="Texture" id=31]
+[ext_resource path="res://Assets/WallGfx/BluishWQall-Sign.png" type="Texture" id=32]
+[ext_resource path="res://Assets/WallGfx/BluishWall.png" type="Texture" id=33]
+[ext_resource path="res://Assets/WallGfx/BrownStoneWall.png" type="Texture" id=34]
+[ext_resource path="res://Assets/WallGfx/BrownStoneWall2.png" type="Texture" id=35]
+[ext_resource path="res://Assets/WallGfx/RedBrickWall.png" type="Texture" id=36]
+[ext_resource path="res://Assets/WallGfx/RedBrickWall-gold.png" type="Texture" id=37]
+[ext_resource path="res://Assets/WallGfx/RedBrickWall-Eagle.png" type="Texture" id=38]
+[ext_resource path="res://Assets/WallGfx/GreyRedBrickWall.png" type="Texture" id=39]
+[ext_resource path="res://Assets/WallGfx/PurpleWall-Blood.png" type="Texture" id=40]
+[ext_resource path="res://Assets/WallGfx/PurpleWall.png" type="Texture" id=41]
+[ext_resource path="res://Assets/WallGfx/BrownTIleWall2.png" type="Texture" id=42]
+[ext_resource path="res://Assets/WallGfx/BrownTileWall1.png" type="Texture" id=43]
+[ext_resource path="res://Assets/WallGfx/BrownWall-Blood1.png" type="Texture" id=44]
+[ext_resource path="res://Assets/WallGfx/BrownWall-Blood2.png" type="Texture" id=45]
+[ext_resource path="res://Assets/WallGfx/BrownWall-Blood3.png" type="Texture" id=46]
+[ext_resource path="res://Assets/WallGfx/BrownWall-Flag.png" type="Texture" id=47]
+[ext_resource path="res://Assets/WallGfx/BrownWall.png" type="Texture" id=48]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 1 )
@@ -121,6 +156,286 @@ uv1_scale = Vector3( 3, 2, 1 )
 material = SubResource( 26 )
 size = Vector3( 1, 1, 1 )
 
+[sub_resource type="SpatialMaterial" id=28]
+albedo_texture = ExtResource( 14 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=29]
+material = SubResource( 28 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=30]
+albedo_texture = ExtResource( 15 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=31]
+material = SubResource( 30 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=32]
+albedo_texture = ExtResource( 16 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=33]
+material = SubResource( 32 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=34]
+albedo_texture = ExtResource( 17 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=35]
+material = SubResource( 34 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=36]
+albedo_texture = ExtResource( 18 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=37]
+material = SubResource( 36 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=38]
+albedo_texture = ExtResource( 19 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=39]
+material = SubResource( 38 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=40]
+albedo_texture = ExtResource( 20 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=41]
+material = SubResource( 40 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=42]
+albedo_texture = ExtResource( 21 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=43]
+material = SubResource( 42 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=44]
+albedo_texture = ExtResource( 22 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=45]
+material = SubResource( 44 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=46]
+albedo_texture = ExtResource( 23 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=47]
+material = SubResource( 46 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=48]
+albedo_texture = ExtResource( 24 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=49]
+material = SubResource( 48 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=50]
+albedo_texture = ExtResource( 25 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=51]
+material = SubResource( 50 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=52]
+albedo_texture = ExtResource( 26 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=53]
+material = SubResource( 52 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=54]
+albedo_texture = ExtResource( 27 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=55]
+material = SubResource( 54 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=56]
+albedo_texture = ExtResource( 28 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=57]
+material = SubResource( 56 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=58]
+albedo_texture = ExtResource( 29 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=59]
+material = SubResource( 58 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=60]
+albedo_texture = ExtResource( 30 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=61]
+material = SubResource( 60 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=62]
+albedo_texture = ExtResource( 31 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=63]
+material = SubResource( 62 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=64]
+albedo_texture = ExtResource( 32 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=65]
+material = SubResource( 64 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=66]
+albedo_texture = ExtResource( 33 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=67]
+material = SubResource( 66 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=68]
+albedo_texture = ExtResource( 34 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=69]
+material = SubResource( 68 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=70]
+albedo_texture = ExtResource( 35 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=71]
+material = SubResource( 70 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=72]
+albedo_texture = ExtResource( 36 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=73]
+material = SubResource( 72 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=74]
+albedo_texture = ExtResource( 37 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=75]
+material = SubResource( 74 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=76]
+albedo_texture = ExtResource( 38 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=77]
+material = SubResource( 76 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=78]
+albedo_texture = ExtResource( 39 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=79]
+material = SubResource( 78 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=80]
+albedo_texture = ExtResource( 40 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=81]
+material = SubResource( 80 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=82]
+albedo_texture = ExtResource( 41 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=83]
+material = SubResource( 82 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=84]
+albedo_texture = ExtResource( 42 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=85]
+material = SubResource( 84 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=86]
+albedo_texture = ExtResource( 43 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=87]
+material = SubResource( 86 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=88]
+albedo_texture = ExtResource( 44 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=89]
+material = SubResource( 88 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=90]
+albedo_texture = ExtResource( 45 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=91]
+material = SubResource( 90 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=92]
+albedo_texture = ExtResource( 46 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=93]
+material = SubResource( 92 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=94]
+albedo_texture = ExtResource( 47 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=95]
+material = SubResource( 94 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=96]
+albedo_texture = ExtResource( 48 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="CubeMesh" id=97]
+material = SubResource( 96 )
+size = Vector3( 1, 1, 1 )
+
 [node name="Walls" type="Spatial"]
 
 [node name="Wall Stone Blue 1" type="MeshInstance" parent="."]
@@ -166,10 +481,54 @@ material/0 = null
 [node name="CollisionShape" type="CollisionShape" parent="Wall Cell Skeleton Stone Blue/StaticBody"]
 shape = SubResource( 3 )
 
+[node name="Wall Brick Blue" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Brick Blue"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Brick Blue/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Brick Blue Sign" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10 )
+mesh = SubResource( 13 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Brick Blue Sign"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Brick Blue Sign/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Brick Blue Skull" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12 )
+mesh = SubResource( 15 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Brick Blue Skull"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Brick Blue Skull/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Brick Blue Swastika" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14 )
+mesh = SubResource( 17 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Brick Blue Swastika"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Brick Blue Swastika/StaticBody"]
+shape = SubResource( 3 )
+
 [node name="Wall Stone Grey 1" type="MeshInstance" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0 )
-mesh = SubResource( 11 )
+mesh = SubResource( 19 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="Wall Stone Grey 1"]
@@ -180,7 +539,7 @@ shape = SubResource( 3 )
 [node name="Wall Stone Grey 2" type="MeshInstance" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2 )
-mesh = SubResource( 13 )
+mesh = SubResource( 21 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="Wall Stone Grey 2"]
@@ -191,7 +550,7 @@ shape = SubResource( 3 )
 [node name="Wall Flag Stone Grey" type="MeshInstance" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4 )
-mesh = SubResource( 15 )
+mesh = SubResource( 23 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="Wall Flag Stone Grey"]
@@ -202,7 +561,7 @@ shape = SubResource( 3 )
 [node name="Wall Golden Eagle Stone Grey" type="MeshInstance" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 6 )
-mesh = SubResource( 17 )
+mesh = SubResource( 25 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="Wall Golden Eagle Stone Grey"]
@@ -213,7 +572,7 @@ shape = SubResource( 3 )
 [node name="Wall Hitler Stone Grey" type="MeshInstance" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 8 )
-mesh = SubResource( 19 )
+mesh = SubResource( 27 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="Wall Hitler Stone Grey"]
@@ -221,10 +580,120 @@ material/0 = null
 [node name="CollisionShape" type="CollisionShape" parent="Wall Hitler Stone Grey/StaticBody"]
 shape = SubResource( 3 )
 
+[node name="Wall Stone Grey Mos 1" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 10 )
+mesh = SubResource( 29 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Stone Grey Mos 1"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Stone Grey Mos 1/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Stone Grey Mos 2" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 12 )
+mesh = SubResource( 31 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Stone Grey Mos 2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Stone Grey Mos 2/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Stone Grey Sign" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 14 )
+mesh = SubResource( 33 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Stone Grey Sign"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Stone Grey Sign/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Stone Grey" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 16 )
+mesh = SubResource( 35 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Stone Grey"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Stone Grey/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Brick Grey 1" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 18 )
+mesh = SubResource( 37 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Brick Grey 1"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Brick Grey 1/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Brick Grey Hitler" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 28 )
+mesh = SubResource( 39 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Brick Grey Hitler"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Brick Grey Hitler/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Brick Grey Vent" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 20 )
+mesh = SubResource( 41 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Brick Grey Vent"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Brick Grey Vent/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Brick Grey 2" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 22 )
+mesh = SubResource( 43 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Brick Grey 2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Brick Grey 2/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Brick Grey Map" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 24 )
+mesh = SubResource( 45 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Brick Grey Map"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Brick Grey Map/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Brick Grey Mosaic" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 26 )
+mesh = SubResource( 47 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Brick Grey Mosaic"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Brick Grey Mosaic/StaticBody"]
+shape = SubResource( 3 )
+
 [node name="Wall Wood" type="MeshInstance" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0 )
-mesh = SubResource( 21 )
+mesh = SubResource( 49 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="Wall Wood"]
@@ -235,7 +704,7 @@ shape = SubResource( 3 )
 [node name="Wall White Eagle Wood" type="MeshInstance" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2 )
-mesh = SubResource( 23 )
+mesh = SubResource( 51 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="Wall White Eagle Wood"]
@@ -246,7 +715,7 @@ shape = SubResource( 3 )
 [node name="Wall Hitler Wood" type="MeshInstance" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4 )
-mesh = SubResource( 25 )
+mesh = SubResource( 53 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="Wall Hitler Wood"]
@@ -254,13 +723,244 @@ material/0 = null
 [node name="CollisionShape" type="CollisionShape" parent="Wall Hitler Wood/StaticBody"]
 shape = SubResource( 3 )
 
-[node name="Wall Elevator Door" type="MeshInstance" parent="."]
+[node name="Wall Wood Cross" type="MeshInstance" parent="."]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0 )
-mesh = SubResource( 27 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6 )
+mesh = SubResource( 55 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="Wall Elevator Door"]
+[node name="StaticBody" type="StaticBody" parent="Wall Wood Cross"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Wall Elevator Door/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Wall Wood Cross/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Wood board" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8 )
+mesh = SubResource( 57 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Wood board"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Wood board/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Door Elevator 1" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0 )
+mesh = SubResource( 59 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Door Elevator 1"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Door Elevator 1/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Door Elevator 2" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2 )
+mesh = SubResource( 61 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Door Elevator 2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Door Elevator 2/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Door Elevator 3" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 4 )
+mesh = SubResource( 63 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Door Elevator 3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Door Elevator 3/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Steel Blue Sign" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0 )
+mesh = SubResource( 65 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Steel Blue Sign"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Steel Blue Sign/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Steel Blue" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 2 )
+mesh = SubResource( 67 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Steel Blue"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Steel Blue/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wal Stone Brown 1" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0 )
+mesh = SubResource( 69 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wal Stone Brown 1"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wal Stone Brown 1/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wal Stone Brown 2" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 2 )
+mesh = SubResource( 71 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wal Stone Brown 2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wal Stone Brown 2/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Brick Red" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0 )
+mesh = SubResource( 73 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Brick Red"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Brick Red/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Brick Red Swastika" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 2 )
+mesh = SubResource( 75 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Brick Red Swastika"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Brick Red Swastika/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Brick Red Eagle flag" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4 )
+mesh = SubResource( 77 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Brick Red Eagle flag"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Brick Red Eagle flag/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Brick Red and Grey" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 6 )
+mesh = SubResource( 79 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Brick Red and Grey"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Brick Red and Grey/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Stone Purple Blood" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8 )
+mesh = SubResource( 81 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Stone Purple Blood"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Stone Purple Blood/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Stone Purple" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 10 )
+mesh = SubResource( 83 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Stone Purple"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Stone Purple/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Tile Brown 1" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 4 )
+mesh = SubResource( 85 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Tile Brown 1"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Tile Brown 1/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Tile Brown 2" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 6 )
+mesh = SubResource( 87 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Tile Brown 2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Tile Brown 2/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Stone Brown Blood 1" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 14 )
+mesh = SubResource( 89 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Stone Brown Blood 1"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Stone Brown Blood 1/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Stone Brown Blood 2" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10 )
+mesh = SubResource( 91 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Stone Brown Blood 2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Stone Brown Blood 2/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Stone Brown Blood 3" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 12 )
+mesh = SubResource( 93 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Stone Brown Blood 3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Stone Brown Blood 3/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Tile Brown Flag" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 8 )
+mesh = SubResource( 95 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Tile Brown Flag"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Tile Brown Flag/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Wall Stone Brown 3" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 16 )
+mesh = SubResource( 97 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Wall Stone Brown 3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall Stone Brown 3/StaticBody"]
 shape = SubResource( 3 )

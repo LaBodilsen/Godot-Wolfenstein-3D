@@ -1,7 +1,8 @@
 extends StaticBody
 
 var is_door_open = false
-var player_in_area = false
+var enemy_in_area = false
+var player_in_area = true
 var door_anim_playing = false
 
 export(String, FILE, "*.ogg") var door_open_sound
@@ -22,14 +23,14 @@ func _ready():
 		print("Door body exited Connect Error %d" % err)
 
 func on_Player_ActionPressed():
-	if player_in_area == true and is_door_open == false and door_anim_playing == false:
+	if is_door_open == false and door_anim_playing == false:
 		animation_player.play("Door Open") #Open Door
 		$Front/AudioStreamPlayer3D.stream = open_sound
 		$Front/AudioStreamPlayer3D.play()
 		$Front/DoorAutoCloseTimer.start()
 		door_anim_playing = true
 		is_door_open = true
-	elif player_in_area == true and is_door_open == true and door_anim_playing == false:
+	elif is_door_open == true and door_anim_playing == false:
 		animation_player.play_backwards("Door Open") #Close Door, play anim backwards
 		$Front/AudioStreamPlayer3D.stream = close_sound
 		$Front/AudioStreamPlayer3D.play()
@@ -37,20 +38,31 @@ func on_Player_ActionPressed():
 		is_door_open = false
 
 func _on_StaticBody_body_entered(body):
-	if body.name == "Player":
+	if body.is_in_group("Enemy"):
+		enemy_in_area = true
+		if is_door_open == false and door_anim_playing == false:
+			animation_player.play("Door Open") #Open Door
+			$Front/AudioStreamPlayer3D.stream = open_sound
+			$Front/AudioStreamPlayer3D.play()
+			$Front/DoorAutoCloseTimer.start()
+			door_anim_playing = true
+			is_door_open = true
+	elif body.is_in_group("Player"):
 		player_in_area = true
 
 func _on_StaticBody_body_exited(body):
-	if body.name == "Player":
+	if body.is_in_group("Enemy"):
+		enemy_in_area = false
+	if body.is_in_group("Player"):
 		player_in_area = false
 
 func _on_DoorAutoClose_timeout():
-	if player_in_area == false and is_door_open == true and door_anim_playing == false:
-		animation_player.play_backwards("Door Open") #Close Door, play anim backwards
-		$Front/AudioStreamPlayer3D.stream = close_sound
-		$Front/AudioStreamPlayer3D.play()
-		door_anim_playing = true
-		is_door_open = false
+	if enemy_in_area == false and player_in_area == false and is_door_open == true and door_anim_playing == false:
+			animation_player.play_backwards("Door Open") #Close Door, play anim backwards
+			$Front/AudioStreamPlayer3D.stream = close_sound
+			$Front/AudioStreamPlayer3D.play()
+			door_anim_playing = true
+			is_door_open = false
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Door Open":

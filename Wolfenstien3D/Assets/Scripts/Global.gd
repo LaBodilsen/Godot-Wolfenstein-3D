@@ -16,6 +16,9 @@ var HUD_health
 var HUD_ammo
 # warning-ignore:unused_class_variable
 var HUD_weapon
-
+# warning-ignore:unused_class_variable
+var weapon3_pickedup
+# warning-ignore:unused_class_variable
+var weapon4_pickedup
 func _ready():
 	pass

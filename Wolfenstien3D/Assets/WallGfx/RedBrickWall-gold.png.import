@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/RedBrickWall-gold.png-d0c6e2cfd77a0cff3053d259b9050af3.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Assets/WallGfx/RedBrickWall-gold.png"
+dest_files=[ "res://.import/RedBrickWall-gold.png-d0c6e2cfd77a0cff3053d259b9050af3.stex" ]
+
+[params]
+
+compress/mode=3
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

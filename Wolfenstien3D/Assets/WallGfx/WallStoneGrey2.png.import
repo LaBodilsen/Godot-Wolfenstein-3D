@@ -15,7 +15,7 @@ dest_files=[ "res://.import/WallStoneGrey2.png-c2afef8c86c975e5fda01b3c04a9b349.
 [params]
 
 compress/mode=3
-compress/lossy_quality=1.0
+compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
@@ -23,7 +23,7 @@ flags/repeat=true
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
-flags/srgb=2
+flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false

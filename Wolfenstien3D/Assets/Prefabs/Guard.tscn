@@ -1,100 +1,191 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://Assets/Prefabs/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://Assets/EnemyGfx/Guard.png" type="Texture" id=2]
-[ext_resource path="res://Assets/ObjectGfx/AmoPackOnGround.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Scripts/Collectables.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Scripts/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://temp/Guard-draw weapon.anim" type="Animation" id=2]
+[ext_resource path="res://temp/Guard-hit.anim" type="Animation" id=3]
+[ext_resource path="res://temp/Guard-killed.anim" type="Animation" id=4]
+[ext_resource path="res://temp/Guard-shoot.anim" type="Animation" id=5]
+[ext_resource path="res://temp/Guard-walking.anim" type="Animation" id=6]
+[ext_resource path="res://Assets/ObjectGfx/AmoPackOnGround.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Scripts/Collectables.gd" type="Script" id=8]
 
 [sub_resource type="CylinderShape" id=1]
-radius = 0.4
+radius = 0.2
+height = 1.0
 
 [sub_resource type="SpatialMaterial" id=2]
-flags_transparent = true
-flags_unshaded = true
-params_depth_draw_mode = 3
-params_billboard_mode = 2
-
-[sub_resource type="BoxShape" id=3]
-
-[sub_resource type="Animation" id=4]
-resource_name = "Hit"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 47 ]
-}
-
-[sub_resource type="Animation" id=5]
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 40, 41, 42, 43, 44 ]
-}
-
-[sub_resource type="SpatialMaterial" id=6]
 flags_transparent = true
 flags_unshaded = true
 params_cull_mode = 2
 params_depth_draw_mode = 3
 params_billboard_mode = 2
-albedo_texture = ExtResource( 3 )
 
-[sub_resource type="QuadMesh" id=7]
-material = SubResource( 6 )
+[sub_resource type="StreamTexture" id=3]
+flags = 2
+load_path = "res://.import/Guard.png-b973c974052439d6d69cca7dd39aee39.stex"
+
+[sub_resource type="Animation" id=4]
+resource_name = "Walking1"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 9, 17, 25, 33 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Walking2"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 10, 18, 26, 34 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Walking3"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 11, 19, 27, 35 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Walking4"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 12, 20, 28, 36 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Walking5"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 13, 21, 29, 37 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "Walking6"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 14, 22, 30, 38 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "Walking7"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 15, 23, 31, 39 ]
+}
+
+[sub_resource type="SpatialMaterial" id=11]
+flags_transparent = true
+flags_unshaded = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+params_billboard_mode = 2
+albedo_texture = ExtResource( 7 )
+
+[sub_resource type="QuadMesh" id=12]
+material = SubResource( 11 )
 flip_faces = true
 
-[sub_resource type="BoxShape" id=8]
+[sub_resource type="BoxShape" id=13]
 
-[node name="Guard" type="StaticBody" groups=[
+[node name="Guard" type="KinematicBody" groups=[
 "Group",
 "Enemy",
 ]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
 script = ExtResource( 1 )
-rotation_frame_add = 2
-sfx_death_sound = "res://Assets/Sounds/Guard Death2.ogg"
+health = 50
+spot_player_sound = "res://Assets/Sounds/GuardSpotPlayer.wav"
+gun_shoot_sound = "res://Assets/Sounds/Pistol Shoot.wav"
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 material_override = SubResource( 2 )
+cast_shadow = 0
 pixel_size = 0.0156
-double_sided = false
-alpha_cut = 2
-texture = ExtResource( 2 )
+transparent = false
+texture = SubResource( 3 )
 vframes = 7
 hframes = 8
-region_enabled = true
-region_rect = Rect2( 0, 0, 512, 448 )
-
-[node name="Area" type="Area" parent="Sprite3D"]
-editor/display_folded = true
-
-[node name="CollisionShape" type="CollisionShape" parent="Sprite3D/Area"]
-transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0 )
-shape = SubResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D"]
 playback_speed = 0.5
-anims/Hit = SubResource( 4 )
-anims/Killed = SubResource( 5 )
+anims/Draw_Weapon = ExtResource( 2 )
+anims/Hit = ExtResource( 3 )
+anims/Killed = ExtResource( 4 )
+anims/Shoot = ExtResource( 5 )
+anims/Walking0 = ExtResource( 6 )
+anims/Walking1 = SubResource( 4 )
+anims/Walking2 = SubResource( 5 )
+anims/Walking3 = SubResource( 6 )
+anims/Walking4 = SubResource( 7 )
+anims/Walking5 = SubResource( 8 )
+anims/Walking6 = SubResource( 9 )
+anims/Walking7 = SubResource( 10 )
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 
@@ -103,14 +194,18 @@ anims/Killed = SubResource( 5 )
 "Weapons",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0 )
-visible = false
-mesh = SubResource( 7 )
+mesh = SubResource( 12 )
 material/0 = null
-script = ExtResource( 4 )
+script = ExtResource( 8 )
+item_amount = 4
 
 [node name="Area" type="Area" parent="AmoPackOnGround"]
 
 [node name="CollisionShape" type="CollisionShape" parent="AmoPackOnGround/Area"]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
-shape = SubResource( 8 )
+shape = SubResource( 13 )
+
+[node name="RayCast" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, 0, -25 )
 [connection signal="animation_finished" from="Sprite3D/AnimationPlayer" to="." method="_on_Play_animation_finished"]

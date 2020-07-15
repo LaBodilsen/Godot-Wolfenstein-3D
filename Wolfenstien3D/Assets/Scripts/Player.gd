@@ -27,20 +27,21 @@ onready var weapon_sound = sound_gun
 
 onready var weapon_raycast = get_node("WeaponRayCast")
 onready var interact_raycast = get_node("InteractRayCast")
+onready var animation_player = get_node("Weapon/Sprite/AnimationPlayer")
+onready var weapon_sprite = get_node("Weapon/Sprite")
 
 var weapon_collider
-var projectResolution=Vector2(ProjectSettings.get_setting("display/window/size/width"),ProjectSettings.get_setting("display/window/size/height"))
+var projectResolution=OS.get_window_size()
 
 func _ready():
 	Global.GlobalPlayer = self
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	get_tree().call_group("Enemy", "set_camera", self)
+#	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	#Set weapon scale and position relative to windows size
-	$Control/Sprite.scale = Vector2(projectResolution.y/64,projectResolution.y/64)
-	$Control/Sprite.frame = 5
-	$Control.margin_left = -projectResolution.y/2
-	$Control.margin_top = -projectResolution.y
-	$Control.margin_right = projectResolution.y/2
+	weapon_sprite.scale = Vector2(projectResolution.y/64,projectResolution.y/64)
+	weapon_sprite.frame = 5
+	$Weapon.margin_left = -projectResolution.y/2
+	$Weapon.margin_top = -projectResolution.y
+	$Weapon.margin_right = projectResolution.y/2
 
 func _physics_process(delta):
 
@@ -59,16 +60,30 @@ func _physics_process(delta):
 	#character movement
 	var velocity = Vector3()
 	velocity = _axis() * move_speed
-	velocity = move_and_slide(velocity)
+	velocity = move_and_slide(Vector3(velocity.x, 0.0, velocity.z))
 
+#get keyboard movement
+func _axis():
+	var direction = Vector3()
+	if Input.is_action_pressed("Forward"):
+		direction -= get_global_transform().basis.z.normalized()
+	if Input.is_action_pressed("Backward"):
+		direction += get_global_transform().basis.z.normalized()
+	if Input.is_action_pressed("Strafe_left"):
+		direction -= get_global_transform().basis.x.normalized()
+	if Input.is_action_pressed("Strafe_right"):
+		direction += get_global_transform().basis.x.normalized()
+	return direction.normalized()
+	
 func _process(delta):
 	#Player fire weapon 
-	if Input.is_action_just_pressed("Fire") and $Control/Sprite/AnimationPlayer.is_playing() == false:
+	if Input.is_action_just_pressed("Fire") and animation_player.is_playing() == false:
 		if weapon_selected == 1:
 			weapon_collider = weapon_raycast.get_collider() 
 			$WeaponSound1.stream = weapon_sound
 			$WeaponSound1.play()
-			$Control/Sprite/AnimationPlayer.play(weapon_animation)
+			weapon_hit_damage = rand_range(0, 15)
+			animation_player.play(weapon_animation)
 			if weapon_raycast.is_colliding() and weapon_collider.is_in_group("Enemy"):
 				weapon_collider.im_hit(weapon_hit_damage)
 
@@ -78,32 +93,40 @@ func _process(delta):
 				weapon_collider = weapon_raycast.get_collider() 
 				$WeaponSound1.stream = weapon_sound
 				$WeaponSound1.play()
-				$Control/Sprite/AnimationPlayer.play(weapon_animation)
+				weapon_hit_damage = rand_range(0, 50)
+				animation_player.play(weapon_animation)
 				if weapon_raycast.is_colliding() and weapon_collider.is_in_group("Enemy"):
 					weapon_collider.im_hit(weapon_hit_damage)
 
 		elif weapon_selected == 3:
-			$Control/Sprite/AnimationPlayer.play("RiseMachineGun")
+			animation_player.play("RiseMachineGun")
 
 		elif weapon_selected == 4:
-			$Control/Sprite/AnimationPlayer.play("RiseChainGun")
+			animation_player.play("RiseChainGun")
 
 
-	if Input.is_action_pressed("Fire") and $Control/Sprite/AnimationPlayer.is_playing() == false:
+	if Input.is_action_pressed("Fire") and animation_player.is_playing() == false:
 		if weapon_selected == 3 or weapon_selected == 4:
 			if not Global.HUD_ammo == 0:
 				Global.GlobalHUD.on_ammo_changed(-1)
 				$WeaponSound1.stream = weapon_sound
-				$Control/Sprite/AnimationPlayer.play(weapon_animation)
+				if  weapon_animation == "FireChainGun1":
+					weapon_animation = "FireChainGun2"
+				elif weapon_animation == "FireChainGun2":
+					weapon_animation = "FireChainGun1"
+				animation_player.play(weapon_animation)
+				weapon_hit_damage = rand_range(0, 50)
 				weapon_collider = weapon_raycast.get_collider()
 				if weapon_raycast.is_colliding() and weapon_collider.is_in_group("Enemy"):
 					weapon_collider.im_hit(weapon_hit_damage)
+			elif Global.HUD_ammo == 0 and weapon_selected == 4:
+					weapon_sprite.frame = 16
 
 	if Input.is_action_just_released("Fire"):
 		if weapon_selected == 3:
-			$Control/Sprite/AnimationPlayer.play("LowerMachineGun")
+			animation_player.play("LowerMachineGun")
 		elif weapon_selected == 4:
-			$Control/Sprite/AnimationPlayer.play("LowerChainGun")
+			animation_player.play("LowerChainGun")
 
 func _input(event):
 	#Get mouse movement
@@ -124,7 +147,7 @@ func _input(event):
 		weapon_animation = "Knife_Stab"
 		weapon_sound = sound_knife
 		weapon_raycast.cast_to = Vector3(0.0, 0.0 , -1.0)
-		$Control/Sprite.frame = 0
+		weapon_sprite.frame = 0
 		Global.GlobalHUD.on_weapon_change(weapon_selected)
 	elif event.is_action_pressed("Weapon_2"):
 		weapon_selected = 2
@@ -132,34 +155,32 @@ func _input(event):
 		weapon_animation = "FireGun"
 		weapon_sound = sound_gun
 		weapon_raycast.cast_to = Vector3(0.0, 0.0 , -25.0)
-		$Control/Sprite.frame = 5
+		weapon_sprite.frame = 5
 		Global.GlobalHUD.on_weapon_change(weapon_selected)
-	elif event.is_action_pressed("Weapon_3"):
+	elif event.is_action_pressed("Weapon_3") and Global.weapon3_pickedup == true:
 		weapon_selected = 3
 		weapon_hit_damage = 50
 		weapon_animation = "FireMachineGun"
 		weapon_sound = sound_machinegun
 		weapon_raycast.cast_to = Vector3(0.0, 0.0 , -25.0)
-		$Control/Sprite.frame = 10
+		weapon_sprite.frame = 10
 		Global.GlobalHUD.on_weapon_change(weapon_selected)
-	elif event.is_action_pressed("Weapon_4"):
+	elif event.is_action_pressed("Weapon_4") and Global.weapon4_pickedup == true:
 		weapon_selected = 4
-		weapon_hit_damage = 100
-		weapon_animation = "FireChainGun"
+		weapon_hit_damage = 50
+		weapon_animation = "FireChainGun1"
 		weapon_sound = sound_chaingun
 		weapon_raycast.cast_to = Vector3(0.0, 0.0 , -25.0)
 		$Control/Sprite.frame = 15
 		Global.GlobalHUD.on_weapon_change(weapon_selected)
+		#Hover cheat mode
+	elif event.is_action_pressed("UP"):
+		self.translation.y = 2
+	elif event.is_action_pressed("DOWN"):
+		self.translation.y = 0.5
 
-#get keyboard movement
-func _axis():
-	var direction = Vector3()
-	if Input.is_action_pressed("Forward"):
-		direction -= get_global_transform().basis.z.normalized()
-	if Input.is_action_pressed("Backward"):
-		direction += get_global_transform().basis.z.normalized()
-	if Input.is_action_pressed("Strafe_left"):
-		direction -= get_global_transform().basis.x.normalized()
-	if Input.is_action_pressed("Strafe_right"):
-		direction += get_global_transform().basis.x.normalized()
-	return direction.normalized()
+func im_hit(damage):
+	Global.GlobalHUD.on_health_changed(damage)
+	$Hit_Flash/ColorRect/AnimationPlayer.stop()
+	$Hit_Flash/ColorRect/AnimationPlayer.play("Flash_hit")
+	pass

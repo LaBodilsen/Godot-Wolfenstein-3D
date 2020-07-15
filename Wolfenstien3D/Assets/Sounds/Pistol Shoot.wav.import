@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Pistol Shoot.wav-0e4a5353260f550da9e711a7cc7b28af.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Pistol Shoot.wav"
+dest_files=[ "res://.import/Pistol Shoot.wav-0e4a5353260f550da9e711a7cc7b28af.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

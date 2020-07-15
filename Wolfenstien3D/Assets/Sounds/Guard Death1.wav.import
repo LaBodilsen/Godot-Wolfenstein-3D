@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Guard Death1.wav-d5dd5fe585f43c590c7497a3d1bff4ed.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Guard Death1.wav"
+dest_files=[ "res://.import/Guard Death1.wav-d5dd5fe585f43c590c7497a3d1bff4ed.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

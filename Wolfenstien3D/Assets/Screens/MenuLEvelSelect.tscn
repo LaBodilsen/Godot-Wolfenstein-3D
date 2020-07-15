@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Screens/ScreenGFX/menuitems_episodes.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Screens/ScreenGFX/menubg_levels.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Screens/ScreenGFX/menuselector.png" type="Texture" id=3]
+
+[node name="MenuLevelSelect" type="CanvasLayer"]
+
+[node name="ColorRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.503174
+margin_right = 0.503174
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Episode 1" type="Sprite" parent="ColorRect"]
+position = Vector2( 702, 216 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+vframes = 2
+frame = 1
+region_enabled = true
+region_rect = Rect2( 0, 0, 544, 112 )
+
+[node name="Episode 2" type="Sprite" parent="ColorRect"]
+position = Vector2( 702, 320 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+vframes = 2
+region_enabled = true
+region_rect = Rect2( 0, 112, 544, 112 )
+
+[node name="Episode 3" type="Sprite" parent="ColorRect"]
+position = Vector2( 702, 424 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+vframes = 2
+region_enabled = true
+region_rect = Rect2( 0, 224, 544, 112 )
+
+[node name="Pointer" type="Sprite" parent="ColorRect"]
+position = Vector2( 96.8037, 192.777 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )

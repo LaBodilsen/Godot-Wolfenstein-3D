@@ -47,6 +47,7 @@ func _ready():
 
 	#Hide end level canvas fade
 	$EndLevelFader/ColorRect.hide()
+	$EndLevelStats/ColorRect.hide()
 
 func _input(event):
 	if event is InputEventKey and event.is_action_pressed("ui_cancel"):
@@ -62,12 +63,14 @@ func on_weapon_collected(object, amount):
 			object.queue_free()
 			$CollectorFlash/ColorRect/AnimationPlayer.play("WeaponItemCollected")
 	if object.is_in_group("Weapon_3"):
+		Global.weapon3_pickedup = true
 		$"Sound FX Player".stream = weapon3_sound
 		$"Sound FX Player".play()
 		Global.GlobalHUD.on_ammo_changed(amount)
 		object.queue_free()
 		$CollectorFlash/ColorRect/AnimationPlayer.play("WeaponItemCollected")
 	if object.is_in_group("Weapon_4"):
+		Global.weapon4_pickedup = true
 		$"Sound FX Player".stream = weapon4_sound
 		$"Sound FX Player".play()
 		Global.GlobalHUD.on_ammo_changed(amount)
@@ -123,11 +126,12 @@ func on_treasure_collected(object, amount):
 		object.queue_free()
 		$CollectorFlash/ColorRect/AnimationPlayer.play("TreasureItemCollected")
 		treasures += 1
+
 func on_extralife_collected(object, amount):
 	print(object.name)
 	$"Sound FX Player".stream = extralife_sound
 	$"Sound FX Player".play()
-	Global.GlobalHUD.on_extralife_collected(1)
+	Global.GlobalHUD.on_extralife_collected(amount)
 	Global.GlobalHUD.on_health_changed(99)
 	Global.GlobalHUD.on_ammo_changed(25)
 	object.queue_free()

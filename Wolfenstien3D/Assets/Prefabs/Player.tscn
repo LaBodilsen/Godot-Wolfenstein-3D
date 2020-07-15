@@ -1,15 +1,16 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Weapons.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sounds/ChainGunsound.wav" type="AudioStream" id=3]
 
 [sub_resource type="CylinderShape" id=1]
-radius = 1.5
+radius = 0.4
+height = 1.2
 
 [sub_resource type="Animation" id=2]
-resource_name = "FireChainGun"
-length = 0.2
+resource_name = "FireChainGun1"
+length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -17,10 +18,26 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 17, 18 ]
+"values": [ 18 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "FireChainGun2"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 17 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("../../WeaponSound1:playing")
@@ -34,20 +51,8 @@ tracks/1/keys = {
 "update": 1,
 "values": [ true ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("../../WeaponSound2:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -62,8 +67,7 @@ tracks/0/keys = {
 "values": [ 6, 7, 8, 5 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "FireMachineGun"
+[sub_resource type="Animation" id=5]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -72,10 +76,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 12, 13, 10 ]
+"values": [ 12, 13 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("../../WeaponSound1:playing")
@@ -90,7 +94,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 length = 0.6
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -105,8 +109,7 @@ tracks/0/keys = {
 "values": [ 1, 2, 3, 4, 1, 0 ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "LowerChainGun"
+[sub_resource type="Animation" id=7]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -121,8 +124,7 @@ tracks/0/keys = {
 "values": [ 16, 19, 15 ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "LowerMachineGun"
+[sub_resource type="Animation" id=8]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -137,7 +139,7 @@ tracks/0/keys = {
 "values": [ 11, 10 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -152,8 +154,7 @@ tracks/0/keys = {
 "values": [ 15, 16 ]
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "RiseMachineGun"
+[sub_resource type="Animation" id=10]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -168,23 +169,40 @@ tracks/0/keys = {
 "values": [ 10, 11 ]
 }
 
-[sub_resource type="GDScript" id=10]
+[sub_resource type="Animation" id=11]
+resource_name = "Flash_hit"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 0.219608 ), Color( 1, 0, 0, 0 ) ]
+}
+
+[sub_resource type="GDScript" id=12]
 script/source = "extends AudioStreamPlayer
 
 func _ready():
 	pass
 "
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" groups=[
+"Player",
+]]
 script = ExtResource( 1 )
 mouse_sensitivity = 0.4
-weapon_sound_knife = "res://Assets/Sounds/Gun Fire.ogg"
+weapon_sound_knife = "res://Assets/Sounds/Knife.ogg"
 weapon_sound_gun = "res://Assets/Sounds/Gun Fire.ogg"
 weapon_sound_machinegun = "res://Assets/Sounds/MachineGun.wav"
 weapon_sound_chaingun = "res://Assets/Sounds/ChainGunsound.wav"
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0.25, 0, 0, 0, 0.3, 0, 0, 0, 0.25, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="WeaponRayCast" type="RayCast" parent="."]
@@ -198,7 +216,7 @@ cast_to = Vector3( 0, 0, -1 )
 [node name="Camera" type="Camera" parent="."]
 fov = 45.0
 
-[node name="Control" type="Control" parent="."]
+[node name="Weapon" type="Control" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -207,7 +225,7 @@ margin_left = -400.0
 margin_top = -800.0
 margin_right = 400.0
 
-[node name="Sprite" type="Sprite" parent="Control"]
+[node name="Sprite" type="Sprite" parent="Weapon"]
 scale = Vector2( 12.5, 12.5 )
 texture = ExtResource( 2 )
 centered = false
@@ -215,22 +233,33 @@ vframes = 4
 hframes = 5
 frame = 5
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Sprite"]
-anims/FireChainGun = SubResource( 2 )
-anims/FireGun = SubResource( 3 )
-anims/FireMachineGun = SubResource( 4 )
-anims/Knife_Stab = SubResource( 5 )
-anims/LowerChainGun = SubResource( 6 )
-anims/LowerMachineGun = SubResource( 7 )
-anims/RiseChainGun = SubResource( 8 )
-anims/RiseMachineGun = SubResource( 9 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Weapon/Sprite"]
+anims/FireChainGun1 = SubResource( 2 )
+anims/FireChainGun2 = SubResource( 3 )
+anims/FireGun = SubResource( 4 )
+anims/FireMachineGun = SubResource( 5 )
+anims/Knife_Stab = SubResource( 6 )
+anims/LowerChainGun = SubResource( 7 )
+anims/LowerMachineGun = SubResource( 8 )
+anims/RiseChainGun = SubResource( 9 )
+anims/RiseMachineGun = SubResource( 10 )
+
+[node name="Hit_Flash" type="Control" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Hit_Flash"]
+margin_right = 1280.0
+margin_bottom = 800.0
+color = Color( 1, 0, 0, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Hit_Flash/ColorRect"]
+anims/Flash_hit = SubResource( 11 )
 
 [node name="WeaponSound1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 volume_db = -5.832
-script = SubResource( 10 )
+script = SubResource( 12 )
 
 [node name="WeaponSound2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 volume_db = -5.832
-script = SubResource( 10 )
+script = SubResource( 12 )

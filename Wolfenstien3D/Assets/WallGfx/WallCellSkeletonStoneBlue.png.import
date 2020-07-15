@@ -15,7 +15,7 @@ dest_files=[ "res://.import/WallCellSkeletonStoneBlue.png-b0d3f6d3368cef1ace9c9f
 [params]
 
 compress/mode=3
-compress/lossy_quality=1.0
+compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
@@ -23,8 +23,8 @@ flags/repeat=true
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
-flags/srgb=2
-process/fix_alpha_border=true
+flags/srgb=1
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false

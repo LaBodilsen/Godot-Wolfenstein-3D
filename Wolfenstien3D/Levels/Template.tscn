@@ -1,0 +1,234 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Assets/Scripts/Level_Init.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Prefabs/Ground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Prefabs/Wallslib.meshlib" type="MeshLibrary" id=3]
+[ext_resource path="res://Assets/Prefabs/StaticObjects.meshlib" type="MeshLibrary" id=4]
+[ext_resource path="res://Assets/Prefabs/Door.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Endlevelpicture.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Music/GETTHEM.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Prefabs/Player.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "ExtraLifeItemCollected"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 0, 0.12549 ), Color( 0.0352941, 1, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "HealthItemCollected"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 0, 0.12549 ), Color( 0.0352941, 1, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "PlayerHitByEnemy"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 0.12549 ), Color( 0.0352941, 1, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "TreasureItemCollected"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 0, 0.12549 ), Color( 0.0352941, 1, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 0, 0.12549 ), Color( 0.0352941, 1, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="BitmapFont" id=7]
+height = 16.0
+
+[node name="E1M1" type="Spatial"]
+script = ExtResource( 1 )
+sfx_amo_pickup = "res://Assets/Sounds/Amo Pickup.ogg"
+sfx_weapon3_Pickup = "res://Assets/Sounds/MachineGunPickup.wav"
+sfx_weapon4_Pickup = "res://Assets/Sounds/ChainGunPickup.ogg"
+sfx_treasure_pickup1 = "res://Assets/Sounds/Treasure Pickup.ogg"
+sfx_treasure_pickup2 = "res://Assets/Sounds/GoldCrossPickup.wav"
+sfx_treasure_pickup3 = "res://Assets/Sounds/GoldChestPickup.wav"
+sfx_treasure_pickup4 = "res://Assets/Sounds/Treasure Pickup.ogg"
+sfx_health_pickup1 = "res://Assets/Sounds/HealthPackPickup.wav"
+sfx_health_pickup2 = "res://Assets/Sounds/FoodPlatePickup.wav"
+sfx_extralife_pickup = "res://Assets/Sounds/ExtraLifePickup.ogg"
+
+[node name="CollectorFlash" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CollectorFlash"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 2.0
+margin_bottom = 2.0
+color = Color( 0.0352941, 1, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CollectorFlash/ColorRect"]
+anims/ExtraLifeItemCollected = SubResource( 1 )
+anims/HealthItemCollected = SubResource( 2 )
+anims/PlayerHitByEnemy = SubResource( 3 )
+anims/TreasureItemCollected = SubResource( 4 )
+anims/WeaponItemCollected = SubResource( 5 )
+
+[node name="Ground" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.1, 0 )
+
+[node name="WallsGridMap" type="GridMap" parent="."]
+mesh_library = ExtResource( 3 )
+cell_size = Vector3( 1, 1, 1 )
+data = {
+"cells": PoolIntArray( 4, 0, -1610612706, 65540, 0, 30, 131076, 0, -1610612706, 4, 1, -1610612706, 65540, 1, 30, 131075, 1, 536870942, 131076, 1, 30, 196610, 1, 536870942, 196611, 1, -1610612706, 196612, 1, -1610612706, 4, 2, 30, 65540, 2, 536870942, 131076, 2, 30, 4, 3, 30, 65540, 3, 30, 2, 4, 30, 3, 4, 30, 4, 4, 30, 2, 65534, 30, 3, 65534, 536870942, 4, 65534, 30, 4, 65535, -1610612706, 65540, 65535, 30 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="StaticObjectsGridMap" type="GridMap" parent="."]
+mesh_library = ExtResource( 4 )
+cell_size = Vector3( 1, 1, 1 )
+collision_layer = 2
+data = {
+"cells": PoolIntArray(  )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 1, 0 )
+}
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
+light_energy = 0.5
+
+[node name="DirectionalLight2" type="DirectionalLight" parent="."]
+light_energy = 0.5
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="Door" parent="Doors" instance=ExtResource( 5 )]
+transform = Transform( 0.999, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, 4.5 )
+
+[node name="Elevators" type="Node" parent="."]
+
+[node name="EndLevelFader" type="CanvasLayer" parent="."]
+
+[node name="EndLevelFadeTimer" type="Timer" parent="EndLevelFader"]
+wait_time = 2.0
+
+[node name="ColorRect" type="ColorRect" parent="EndLevelFader"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EndLevelFader/ColorRect"]
+anims/EndLevelFade = SubResource( 6 )
+
+[node name="Collectables" type="Node" parent="."]
+
+[node name="Secrets" type="Node" parent="."]
+
+[node name="EndLevelStats" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="EndLevelStats"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0.254902, 0.254902, 1 )
+
+[node name="Label" type="Label" parent="EndLevelStats/ColorRect"]
+margin_left = 142.0
+margin_top = 95.0
+margin_right = 182.0
+margin_bottom = 130.0
+custom_fonts/font = SubResource( 7 )
+text = "HEJ
+"
+
+[node name="TextureRect" type="TextureRect" parent="EndLevelStats/ColorRect"]
+margin_left = 41.0
+margin_top = 35.0
+margin_right = 206.0
+margin_bottom = 212.0
+size_flags_stretch_ratio = 38.49
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 5
+
+[node name="Enemys" type="Node" parent="."]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="Sound FX Player" type="AudioStreamPlayer" parent="."]
+
+[node name="Player" parent="." instance=ExtResource( 8 )]
+transform = Transform( -0.996195, 0, 0.0871556, 0, 1, 0, -0.0871556, 0, -0.996195, 0, 0.5, 0 )
+[connection signal="timeout" from="EndLevelFader/EndLevelFadeTimer" to="." method="_on_EndLevelFadeTimer_timeout"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/HUDGfx/HUD Mockup.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Scripts/HUD.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Fonts/Some Time Later.otf" type="DynamicFontData" id=3]
-[ext_resource path="res://Assets/HUDGfx/Weapons.png" type="Texture" id=4]
+[ext_resource path="res://Assets/HUDGfx/bj.png" type="Texture" id=4]
+[ext_resource path="res://Assets/HUDGfx/Weapons.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 3 )
@@ -12,74 +13,152 @@ font_data = ExtResource( 3 )
 extra_spacing_char = 1
 font_data = ExtResource( 3 )
 
+[sub_resource type="Animation" id=3]
+resource_name = "LookAround1"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 2, 0, 1 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "LookAround2"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "LookAround3"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 1 ]
+}
+
 [node name="TextureRect" type="TextureRect"]
-margin_right = 1280.0
-margin_bottom = 160.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_right = 320.0
+margin_bottom = 40.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 texture = ExtResource( 1 )
 expand = true
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Lbl-Level" type="Label" parent="."]
-margin_left = 92.9479
-margin_top = 31.1469
-margin_right = 96.9479
-margin_bottom = 58.1469
-rect_scale = Vector2( 4, 5 )
+margin_left = 23.8198
+margin_top = 20.5345
+margin_right = 27.8198
+margin_bottom = 37.5345
 custom_fonts/font = SubResource( 1 )
 text = "1"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Lbl-Score" type="Label" parent="."]
-margin_left = 189.219
-margin_top = 31.2032
-margin_right = 238.219
-margin_bottom = 58.2032
-rect_scale = Vector2( 4, 5 )
+margin_left = 46.5339
+margin_top = 20.6136
+margin_right = 96.5339
+margin_bottom = 37.6136
 custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Lbl-Lives" type="Label" parent="."]
-margin_left = 447.681
-margin_top = 30.1469
-margin_right = 456.681
-margin_bottom = 57.1469
-rect_scale = Vector2( 4, 5 )
+margin_left = 111.225
+margin_top = 20.6861
+margin_right = 120.225
+margin_bottom = 37.6861
 custom_fonts/font = SubResource( 2 )
 text = "3"
+align = 1
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 149, 21 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+hframes = 26
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+autoplay = "LookAround1"
+anims/LookAround1 = SubResource( 3 )
+anims/LookAround2 = SubResource( 4 )
+anims/LookAround3 = SubResource( 5 )
+
+[node name="Timer" type="Timer" parent="Sprite"]
 
 [node name="Lbl-Health" type="Label" parent="."]
-margin_left = 666.246
-margin_top = 30.1469
-margin_right = 690.246
-margin_bottom = 57.1469
-rect_scale = Vector2( 4, 5 )
+margin_left = 168.015
+margin_top = 20.0
+margin_right = 192.015
+margin_bottom = 37.0
 custom_fonts/font = SubResource( 2 )
-text = "95"
+text = "100"
 align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Lbl-Health%" type="Label" parent="."]
-margin_left = 769.745
-margin_top = 31.1469
-margin_right = 785.745
-margin_bottom = 58.1469
-rect_scale = Vector2( 4, 5 )
+margin_left = 192.212
+margin_top = 20.0
+margin_right = 208.212
+margin_bottom = 37.0
 custom_fonts/font = SubResource( 1 )
 text = "%"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Lbl-Ammo" type="Label" parent="."]
-margin_left = 866.722
-margin_top = 28.6395
-margin_right = 885.722
-margin_bottom = 55.6395
-rect_scale = Vector2( 4, 5 )
+margin_left = 213.061
+margin_top = 20.0
+margin_right = 232.061
+margin_bottom = 35.522
 custom_fonts/font = SubResource( 2 )
 text = "90"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Spr-Weapon" type="Sprite" parent="."]
-position = Vector2( 1121.6, 81.8836 )
-scale = Vector2( 4, 4 )
-texture = ExtResource( 4 )
+position = Vector2( 279.821, 19.9811 )
+texture = ExtResource( 5 )
 hframes = 4
 frame = 1
+[connection signal="animation_finished" from="Sprite/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="Sprite/Timer" to="." method="_on_Timer_timeout"]
