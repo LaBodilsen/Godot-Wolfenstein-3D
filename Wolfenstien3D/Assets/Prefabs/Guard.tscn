@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Assets/Scripts/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://temp/Guard-draw weapon.anim" type="Animation" id=2]
@@ -13,18 +13,11 @@
 radius = 0.2
 height = 1.0
 
-[sub_resource type="SpatialMaterial" id=2]
-flags_transparent = true
-flags_unshaded = true
-params_cull_mode = 2
-params_depth_draw_mode = 3
-params_billboard_mode = 2
-
-[sub_resource type="StreamTexture" id=3]
+[sub_resource type="StreamTexture" id=2]
 flags = 2
 load_path = "res://.import/Guard.png-b973c974052439d6d69cca7dd39aee39.stex"
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "Walking1"
 length = 0.4
 tracks/0/type = "value"
@@ -40,7 +33,7 @@ tracks/0/keys = {
 "values": [ 9, 17, 25, 33 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "Walking2"
 length = 0.4
 tracks/0/type = "value"
@@ -56,7 +49,7 @@ tracks/0/keys = {
 "values": [ 10, 18, 26, 34 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 resource_name = "Walking3"
 length = 0.4
 tracks/0/type = "value"
@@ -72,7 +65,7 @@ tracks/0/keys = {
 "values": [ 11, 19, 27, 35 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 resource_name = "Walking4"
 length = 0.4
 tracks/0/type = "value"
@@ -88,7 +81,7 @@ tracks/0/keys = {
 "values": [ 12, 20, 28, 36 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 resource_name = "Walking5"
 length = 0.4
 tracks/0/type = "value"
@@ -104,7 +97,7 @@ tracks/0/keys = {
 "values": [ 13, 21, 29, 37 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=8]
 resource_name = "Walking6"
 length = 0.4
 tracks/0/type = "value"
@@ -120,7 +113,7 @@ tracks/0/keys = {
 "values": [ 14, 22, 30, 38 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=9]
 resource_name = "Walking7"
 length = 0.4
 tracks/0/type = "value"
@@ -136,7 +129,7 @@ tracks/0/keys = {
 "values": [ 15, 23, 31, 39 ]
 }
 
-[sub_resource type="SpatialMaterial" id=11]
+[sub_resource type="SpatialMaterial" id=10]
 flags_transparent = true
 flags_unshaded = true
 params_cull_mode = 2
@@ -144,15 +137,15 @@ params_depth_draw_mode = 3
 params_billboard_mode = 2
 albedo_texture = ExtResource( 7 )
 
-[sub_resource type="QuadMesh" id=12]
-material = SubResource( 11 )
+[sub_resource type="QuadMesh" id=11]
+material = SubResource( 10 )
 flip_faces = true
 
-[sub_resource type="BoxShape" id=13]
+[sub_resource type="BoxShape" id=12]
 
 [node name="Guard" type="KinematicBody" groups=[
-"Group",
 "Enemy",
+"Group",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
 script = ExtResource( 1 )
@@ -164,13 +157,13 @@ gun_shoot_sound = "res://Assets/Sounds/Pistol Shoot.wav"
 shape = SubResource( 1 )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-material_override = SubResource( 2 )
-cast_shadow = 0
 pixel_size = 0.0156
-transparent = false
-texture = SubResource( 3 )
-vframes = 7
+billboard = 2
+alpha_cut = 1
+texture = SubResource( 2 )
 hframes = 8
+vframes = 7
+frame = 48
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D"]
 playback_speed = 0.5
@@ -179,13 +172,13 @@ anims/Hit = ExtResource( 3 )
 anims/Killed = ExtResource( 4 )
 anims/Shoot = ExtResource( 5 )
 anims/Walking0 = ExtResource( 6 )
-anims/Walking1 = SubResource( 4 )
-anims/Walking2 = SubResource( 5 )
-anims/Walking3 = SubResource( 6 )
-anims/Walking4 = SubResource( 7 )
-anims/Walking5 = SubResource( 8 )
-anims/Walking6 = SubResource( 9 )
-anims/Walking7 = SubResource( 10 )
+anims/Walking1 = SubResource( 3 )
+anims/Walking2 = SubResource( 4 )
+anims/Walking3 = SubResource( 5 )
+anims/Walking4 = SubResource( 6 )
+anims/Walking5 = SubResource( 7 )
+anims/Walking6 = SubResource( 8 )
+anims/Walking7 = SubResource( 9 )
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 
@@ -194,7 +187,7 @@ anims/Walking7 = SubResource( 10 )
 "Weapons",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0 )
-mesh = SubResource( 12 )
+mesh = SubResource( 11 )
 material/0 = null
 script = ExtResource( 8 )
 item_amount = 4
@@ -203,9 +196,10 @@ item_amount = 4
 
 [node name="CollisionShape" type="CollisionShape" parent="AmoPackOnGround/Area"]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
-shape = SubResource( 13 )
+shape = SubResource( 12 )
 
 [node name="RayCast" type="RayCast" parent="."]
 enabled = true
 cast_to = Vector3( 0, 0, -25 )
+
 [connection signal="animation_finished" from="Sprite3D/AnimationPlayer" to="." method="_on_Play_animation_finished"]

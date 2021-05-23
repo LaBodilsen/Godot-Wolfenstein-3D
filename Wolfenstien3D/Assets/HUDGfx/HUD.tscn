@@ -160,5 +160,6 @@ position = Vector2( 279.821, 19.9811 )
 texture = ExtResource( 5 )
 hframes = 4
 frame = 1
+
 [connection signal="animation_finished" from="Sprite/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="Sprite/Timer" to="." method="_on_Timer_timeout"]

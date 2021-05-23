@@ -229,8 +229,8 @@ margin_right = 400.0
 scale = Vector2( 12.5, 12.5 )
 texture = ExtResource( 2 )
 centered = false
-vframes = 4
 hframes = 5
+vframes = 4
 frame = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Weapon/Sprite"]
