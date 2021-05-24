@@ -35,14 +35,21 @@ var projectResolution=OS.get_window_size()
 
 func _ready():
 	Global.GlobalPlayer = self
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+#	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	_set_screen_size()
+
+func _set_screen_size():
 	#Set weapon scale and position relative to windows size
+	projectResolution=OS.get_window_size()
 	weapon_sprite.scale = Vector2(projectResolution.y/64,projectResolution.y/64)
 	weapon_sprite.frame = 5
 	$Weapon.margin_left = -projectResolution.y/2
 	$Weapon.margin_top = -projectResolution.y
 	$Weapon.margin_right = projectResolution.y/2
-
+	$Hit_Flash/ColorRect.rect_size = Vector2(projectResolution.y,projectResolution.y)
+	$Hit_Flash/ColorRect.margin_right = projectResolution.x
+	$Hit_Flash/ColorRect.margin_bottom = projectResolution.y
+	
 func _physics_process(delta):
 
 #KeyBoard controls movement

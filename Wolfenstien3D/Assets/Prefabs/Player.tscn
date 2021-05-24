@@ -248,8 +248,11 @@ anims/RiseMachineGun = SubResource( 10 )
 
 [node name="ColorRect" type="ColorRect" parent="Hit_Flash"]
 margin_right = 1280.0
-margin_bottom = 800.0
+margin_bottom = 720.0
 color = Color( 1, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Hit_Flash/ColorRect"]
 anims/Flash_hit = SubResource( 11 )
