@@ -4,7 +4,10 @@ var projectResolution=Vector2()
 
 func _ready():
 	projectResolution=OS.get_window_size()
-	_on_VBoxContainer_resized()
+#	_on_VBoxContainer_resized()
+	_on_ViewportHUD_resized()
+#	_on_Viewport__HUD_size_changed()
+	
 	pass # Replace with function body.
 
 func _input(event):
@@ -27,6 +30,8 @@ func _on_ViewportLevel3D_resized():
 
 func _on_ViewportHUD_resized():
 	$VBoxContainer/ViewportHUD.anchor_top = 0.8
+	$VBoxContainer/ViewportHUD.anchor_right = 1
+	$VBoxContainer/ViewportHUD.anchor_bottom = 1
 	$VBoxContainer/ViewportHUD.rect_size = Vector2(projectResolution.x, (projectResolution.y/100)*20)
 	$VBoxContainer/ViewportHUD.rect_position = Vector2(0, projectResolution.y/100*80)
 	pass # Replace with function body.
