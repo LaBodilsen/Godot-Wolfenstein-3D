@@ -35,7 +35,7 @@ var projectResolution=OS.get_window_size()
 
 func _ready():
 	Global.GlobalPlayer = self
-#	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	_set_screen_size()
 
 func _set_screen_size():
