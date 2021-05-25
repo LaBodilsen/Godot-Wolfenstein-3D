@@ -31,14 +31,25 @@ func _on_ViewportLevel3D_resized():
 	pass # Replace with function body.
 
 func _on_ViewportHUD_resized():
+	print("hud containter size changed")
 	$VBoxContainer/ViewportHUD.anchor_top = 0.8
 	$VBoxContainer/ViewportHUD.anchor_right = 1
 	$VBoxContainer/ViewportHUD.anchor_bottom = 1
 	$VBoxContainer/ViewportHUD.rect_size = Vector2(projectResolution.x, (projectResolution.y/100)*20)
 	$VBoxContainer/ViewportHUD.rect_position = Vector2(0, projectResolution.y/100*80)
+	$"VBoxContainer/ViewportHUD/Viewport - HUD".size = Vector2(projectResolution.x, (projectResolution.y/100)*20)
+	$"VBoxContainer/ViewportHUD/Viewport - HUD/ColorRect".rect_size = Vector2(projectResolution.x, projectResolution.y/100*20)
 	pass # Replace with function body.
 
 func _on_Viewport__HUD_size_changed():
-	$"VBoxContainer/ViewportHUD/Viewport - HUD".size = Vector2(320, 40)
+	print("hud viewport size changed")
+	var scale = Vector2(projectResolution.x/320, projectResolution.y/200)
+#	var scalefactor = min(scale.x, scale.y)
+#	print(scalefactor)
+	$"VBoxContainer/ViewportHUD/Viewport - HUD/HUD".rect_scale = Vector2(scale.x,scale.y)
+#	var margincenter = (projectResolution.y - (320*scalefactor)) / 2
+#	$"VBoxContainer/ViewportHUD/Viewport - HUD/HUD".margin_left = margincenter
+#	$"VBoxContainer/ViewportHUD/Viewport - HUD/HUD".rect_position = Vector2(margincenter, 0)
+
 	pass # Replace with function body.
 

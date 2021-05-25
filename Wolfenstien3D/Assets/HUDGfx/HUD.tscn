@@ -64,10 +64,10 @@ tracks/0/keys = {
 [node name="TextureRect" type="TextureRect"]
 margin_right = 320.0
 margin_bottom = 40.0
+rect_scale = Vector2( 3, 3 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
 texture = ExtResource( 1 )
-expand = true
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
