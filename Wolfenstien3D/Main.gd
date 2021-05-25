@@ -15,6 +15,7 @@ func _input(event):
 		OS.set_window_fullscreen(!OS.window_fullscreen)
 
 func _on_VBoxContainer_resized():
+	print("VBoxContainer resized")
 	projectResolution=OS.get_window_size()
 	$VBoxContainer.rect_size = projectResolution
 	$VBoxContainer.margin_right = 0
@@ -22,6 +23,7 @@ func _on_VBoxContainer_resized():
 	pass # Replace with function body.
 
 func _on_ViewportLevel3D_resized():
+	print("Level3D resized")
 	#Viewport Level in 3D
 	$VBoxContainer/ViewportLevel3D.rect_size = Vector2(projectResolution.x, (projectResolution.y/100)*80)
 	$"VBoxContainer/ViewportLevel3D/Viewport - Game".size = Vector2(projectResolution.x, (projectResolution.y/100)*80)
