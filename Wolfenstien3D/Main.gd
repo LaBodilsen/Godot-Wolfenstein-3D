@@ -28,6 +28,7 @@ func _on_ViewportLevel3D_resized():
 	$VBoxContainer/ViewportLevel3D.rect_size = Vector2(projectResolution.x, (projectResolution.y/100)*80)
 	$"VBoxContainer/ViewportLevel3D/Viewport - Game".size = Vector2(projectResolution.x, (projectResolution.y/100)*80)
 	Global.GlobalPlayer._set_screen_size()
+	$"VBoxContainer/ViewportLevel3D/Viewport - Game/E1M1/EndLevelStats/ColorRect".rect_size = Vector2(projectResolution.x, projectResolution.y/100*80)
 	pass # Replace with function body.
 
 func _on_ViewportHUD_resized():

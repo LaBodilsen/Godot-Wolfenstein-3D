@@ -147,3 +147,4 @@ func _on_EndLevelFadeTimer_timeout():
 #	get_tree().change_scene(next_level)
 #	get_tree().quit()
 	$EndLevelStats/ColorRect.show()
+	$EndLevelStats/ColorRect/TextureRect/Sprite/AnimationPlayer.play("Breathing")

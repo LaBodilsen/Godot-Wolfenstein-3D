@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Assets/Scripts/Level_Init.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Prefabs/Ground.tscn" type="PackedScene" id=2]
@@ -116,6 +116,22 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 
+[sub_resource type="Animation" id=7]
+resource_name = "Breathing"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
 [node name="E1M1" type="Spatial"]
 script = ExtResource( 1 )
 sfx_amo_pickup = "res://Assets/Sounds/Amo Pickup.ogg"
@@ -135,6 +151,9 @@ sfx_extralife_pickup = "res://Assets/Sounds/ExtraLifePickup.ogg"
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.0352941, 1, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CollectorFlash/ColorRect"]
 anims/ExtraLifeItemCollected = SubResource( 1 )
@@ -177,7 +196,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
 light_energy = 0.5
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.5065, 0.5, 18.5 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.73576, 0.5, 8.28377 )
 collision_layer = 3
 
 [node name="Doors" type="Node" parent="."]
@@ -500,6 +519,9 @@ stream = ExtResource( 22 )
 [node name="Sound FX Player" type="AudioStreamPlayer" parent="."]
 
 [node name="EndLevelStats" parent="." instance=ExtResource( 20 )]
+
+[node name="AnimationPlayer" parent="EndLevelStats/ColorRect/TextureRect/Sprite" index="0"]
+anims/Breathing = SubResource( 7 )
 
 [connection signal="timeout" from="EndLevelFader/EndLevelFadeTimer" to="." method="_on_EndLevelFadeTimer_timeout"]
 

@@ -163,7 +163,7 @@ alpha_cut = 1
 texture = SubResource( 2 )
 hframes = 8
 vframes = 7
-frame = 48
+frame = 34
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D"]
 playback_speed = 0.5
